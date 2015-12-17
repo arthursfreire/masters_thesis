@@ -1,5 +1,5 @@
 \chapter{Introdução}
-\label{intro}
+\label{introducao}
 
 De acordo com Emam et al. \cite{emam}, a porcentagem de projetos de TI que sucedem varia entre 46 e 55 porcento. Além disso, o sucesso de projetos de TI depende de cinco fatores: satisfação do cliente, orçamento, cronograma, qualidade do produto e produtividade da equipe. De acordo com os autores, para uma disciplina aplicada, esses números representam um alto índice de falhas.
 
@@ -14,23 +14,23 @@ Chow et al. \cite{chow} identificaram os três principais fatores que influencia
 Em algumas pesquisas sobre equipes de desenvolvimento de \textit{software}, foi identificado que a eficiência dessas equipes está relacionada a eficiência da coordenação do trabalho em equipe \cite{kraut} \cite{hoegl}. Logo, se a eficiência do trabalho em equipe está relacionada com a eficiência das equipes, que por sua vez, influenciam o sucesso de projetos de desenvolvimento de \textit{software}, pode-se afirmar que a eficiência do trabalho em equipe também está relacionada com o sucesso desses projetos. Assim, a avaliação e melhora contínua da eficiência do trabalho em equipe é importante para garantir boa qualidade do \textit{software} resultante de um processo, assim como o sucesso do projeto.
 
 \section{Problemática}
-\label{intro:prob}
+\label{introducao:problematica}
 
-Conforme citado na Seção \ref{intro}, é importante avaliar e garantir a melhoria contínua da ETE, a adoção de um método que proporcione essas oportunidades aos gerentes de projeto agregará valor à esses projetos. Contudo, há diversos fatores que podem vir a influenciar essa eficiência \cite{}. Apesar do contexto em que o objeto de estudo foi avaliado neste trabalho ser restrito, algumas equipes podem decidir utilizar determinadas práticas que outras equipes não utilizam. Esse fato pode causar diferença entre os conjuntos de fatores que influenciam a ETE de diferentes equipes.
+Conforme citado na Seção \ref{introducao}, é importante avaliar e garantir a melhoria contínua da ETE, a adoção de um método que proporcione essas oportunidades aos gerentes de projeto agregará valor à esses projetos. Contudo, há diversos fatores que podem vir a influenciar essa eficiência \cite{}. Apesar do contexto em que o objeto de estudo foi avaliado neste trabalho ser restrito, algumas equipes podem decidir utilizar determinadas práticas que outras equipes não utilizam. Esse fato pode causar diferença entre os conjuntos de fatores que influenciam a ETE de diferentes equipes.
 
 Além disso, os fatores que influenciam a ETE, são, em sua grande maioria, subjetivos. Dessa forma, a aplicação de um método de avaliação da ETE precisa minimizar o viés que pode ser introduzido por conta da subjetividade desses fatores, garantindo que os resultados sejam fiéis ao cenário no qual a avaliação foi realizada.
 
 \section{Objetivos}
-\label{intro:obj}
+\label{introducao:objetivos}
 
-Considerando o que foi abordado na seções anteriores, o principal objetivo deste trabalho é mitigar os problemas descritos, principalmente na Seção \ref{intro:prob}, propondo uma abordagem para auxiliar os gerentes de projeto na avaliação da ETE de equipes baseadas em \textit{Scrum}. Além disso, a utilização dessa abordagem deve auxiliar na identificação de oportunidades de melhorias no trabalho em equipe.
+Considerando o que foi abordado na seções anteriores, o principal objetivo deste trabalho é mitigar os problemas descritos, principalmente na Seção \ref{introducao:problematica}, propondo uma abordagem para auxiliar os gerentes de projeto na avaliação da ETE de equipes baseadas em \textit{Scrum}. Além disso, a utilização dessa abordagem deve auxiliar na identificação de oportunidades de melhorias no trabalho em equipe.
 
-Como forma de representar a ETE em função do relacionamento dos fatores que a influenciam, optou-se pelo uso de \textit{Redes Bayesianas}, uma vez que modelos probabilísticos dessa família são adequados para se modelar incerteza em um determinado domínio \cite{bengal}. Essa decisão foi tomada com o objetivo de diminuir a incerteza em relação à confiança nos resultados finais do modelo, tendo em vista que, como citado na Seção \ref{intro:prob}, a maioria dos fatores que influenciam a ETE são subjetivos.
+Como forma de representar a ETE em função do relacionamento dos fatores que a influenciam, optou-se pelo uso de \textit{Redes Bayesianas}, uma vez que modelos probabilísticos dessa família são adequados para se modelar incerteza em um determinado domínio \cite{bengal}. Essa decisão foi tomada com o objetivo de diminuir a incerteza em relação à confiança nos resultados finais do modelo, tendo em vista que, como citado na Seção \ref{introducao:problematica}, a maioria dos fatores que influenciam a ETE são subjetivos.
 
 \subsection{Objetivos Específicos}
-\label{intro:obj:esp}
+\label{introducao:objetivos:especificos}
 
-Para simplificar os objetivos descritos na Seção \ref{intro:obj}, podemos especificá-los da seguinte maneira:
+Para simplificar os objetivos descritos na Seção \ref{introducao:objetivos}, podemos especificá-los da seguinte maneira:
 
 \begin{enumerate}
   \item Propor uma abordagem baseada em \textit{Redes Bayesianas} para auxiliar na avaliação da ETE de equipes baseadas em \textit{Scrum};
@@ -39,30 +39,30 @@ Para simplificar os objetivos descritos na Seção \ref{intro:obj}, podemos espe
 \end{enumerate}
 
 \section{Contribuições e Resultados}
-\label{intro:result}
+\label{introducao:resultados}
 
-A abordagem proposta neste trabalho é dividida em etapas que englobam desde a concepção do modelo baseado em \textit{Redes Bayesianas} até a avaliação dos resultados calculados por ele. A utilização de modelos dessa família permite calcular probabilisticamente o impacto de fatores menos complexos (nós de entrada e nós intermediários) que afetam a ETE. Tendo em mãos esses resultados, os gerentes poderão observar as saídas do modelo, que o auxiliarão na identificação de oportunidades de melhorias no trabalho em equipe.
+A abordagem proposta neste trabalho é dividida em etapas que englobam desde a concepção do modelo baseado em \textit{Redes Bayesianas}, até a avaliação dos resultados calculados por ele e o processo de tomada de decisões por parte dos gerentes. A utilização de modelos dessa família permite calcular probabilisticamente o impacto de fatores menos complexos (nós de entrada e nós intermediários) que afetam a ETE. Tendo em mãos esses resultados, os gerentes poderão observar as saídas do modelo, que o auxiliarão na identificação de oportunidades de melhorias no trabalho em equipe.
 
 Mesmo sabendo que o conjuntos de fatores que influenciam a ETE de determinadas equipes podem ser diferentes, neste trabalho é proposto um modelo genérico para representar a ETE no contexto de \textit{Scrum}. Dessa forma, os indivíduos que desejarem utilizar essa abordagem poderão adotá-lo como base para modificá-lo e, assim, obter uma representação mais fiel em relação ao cenário em que a equipe está inserida.
 
 {\color{red} Os resultados serão inseridos ao final do estudo de caso...}
 
 \section{Relevância}
-\label{intro:rel}
+\label{introducao:relevancia}
 
 A abordagem proposta é uma alternativa promissora para auxiliar no processo de tomada de decisões por parte dos gerentes de projeto. Os resultados calculados pelo modelo permitem que eles avaliem quais fatores merecem mais atenção caso mais de um fator esteja dimnuindo a ETE, e quais atitudes podem ser tomadas para evitar riscos, além de quais atitudes podem ser tomadas para melhorar a EFT. Essas oportunidades de auxílio na tomada de decisões por parte dos gerentes existem porque, com a utilização dessa abordagem, é possível interpretar fatores subjetivos de forma mais objetiva.
 
 Como a abordagem proposta proporciona os benefícios supracitados, e sabendo da relação entre a EFT e a qualidade do produto de \textit{software} resultante do processo, além do processo em si, a sua utilização proporciona o aumento das chances de sucesso do projeto. Além disso, essa abordagem pode ser integrada com outras abordagens que utilizam \textit{Redes Bayesianas} para avaliação do processo de \textit{software} como um todo.
 
 \section{Estrutura da Dissertação}
-\label{intro:estr}
+\label{introducao:estrutura}
 
 Esta dissertação está organizada da seguinte forma:
 
 \begin{itemize}
-  \item No Capítulo \ref{fund}, são apresentados os conceitos utilizados nesta pesquisa e relacionados à este trabalho;
-  \item No Capítulo \ref{trabs}, são apresentadas algumas pesquisas relacionadas com este trabalho, além de uma avaliação comparativa entre eles;
-  \item No Capítulo \ref{desc}, a abordagem proposta neste trabalho é apresentada;
-  \item No Capítulo \ref{estudo}, é apresentada e detalhadamente descrita a validação deste trabalho, que foi realizada na forma de estudo de caso;
+  \item No Capítulo \ref{fundamentacao}, são apresentados os conceitos utilizados nesta pesquisa e relacionados à este trabalho;
+  \item No Capítulo \ref{trabalhos}, são apresentadas algumas pesquisas relacionadas com este trabalho, além de uma avaliação comparativa entre eles;
+  \item No Capítulo \ref{descricao}, a abordagem proposta neste trabalho é apresentada;
+  \item No Capítulo \ref{estudodecaso}, é apresentada e detalhadamente descrita a validação deste trabalho, que foi realizada na forma de estudo de caso;
   \item No Capítulo \ref{conclusao}, são apresentadas as considerações finais, limitações do trabalho e propostas de trabalhos futuros.
 \end{itemize}
