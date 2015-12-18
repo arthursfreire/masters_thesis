@@ -1,8 +1,20 @@
-\chapter{Descrição da Abordagem Proposta}
-\label{descricao}
+\chapter{Apresentação do Modelo}
+\label{modelo}
 
-Os principais objetivos desta pesquisa são propor uma abordagem baseada em \textit{Redes Bayesianas} para auxiliar na avaliação da ETE, e um modelo para equipes baseadas em \textit{Scrum}, que se adeque à abordagem. Como descrito na Seção \ref{introducao:resultados}, a abordagem proposta é dividida em etapas que englobam desde a concepção do modelo baseado em \textit{Redes Bayesianas}, até a avaliação dos resultados calculados por ele e o processo de tomada de decisões por parte dos gerentes. Neste capítulo, serão descritas todas as etapas desse abordagem. A Figura \ref{} contém o fluxo do método completo e as interações entre as etapas.
+Conforme explicado na Seção \ref{fundamentacao:redes:construcao}, a construção de uma \textit{Rede Bayesiana} pode ser dividada em duas fases: a construção do GAD, e a definição das funções de probabilidade. Portanto, neste capítulo, serão descritas essas duas fases do processo de construção do modelo proposto neste trabalho. À princípio, será explicado como foram identificados os relacionamentos entre os fatores-chave do modelo. Em seguida, será descrito o processo adotado para a definição das funções de probabilidade, e porque foi decidido utilizar funções de probabilidade em vez de tabelas de probabilidade.
 
-{\color{red} Figura ilustrando o método...}
+\section{Construção do GAD}
+\label{modelo:gad}
 
-À princípio, na etapa de construção do modelo, deve ser feito um levantamento de quais fatores afetam a ETE no contexto em que o método será aplicado. Uma vez que esses fatores elencados, faz-se necessário construir o GAD. Em seguida, após a construção do GAD, é necessário definir as funções de probabilidade para cada um dos nós do GAD. Após a definição dessas funções, vem a etapa de avaliação do modelo. Posteriormente, deve-se alimentar os nós de entrada do modelo para que, assim, sejam calculados os resultados referentes à ETE. De posse desses resultados, o gerente deve fazer a análise deles, para que, em seguida, possam tomar decisões corretivas e preventivas relativas à ETE.
+Nesta fase da construção do modelo é necessário identificar os fatores-chave que influenciam a qualidade do TE de equipes ágeis e os relacionamentos entre esses fatores. Como base para a construção do GAD, optou-se por utilizar modelo proposto em \cite{freire} (Figura \ref{modelo:gad:freire}). Nesse modelo, os nós que estão englobados por um retângulo são sub-redes, que estão detalhadas em separado para facilitar o entendimento. De acordo com os autores, o modelo apresentado é uma boa representação do mundo real. Entretanto, uma de suas limitações é que ele foi construído com base em apenas um trabalho. Assim, a partir desse modelo e dos fatores descritos na Seção \ref{fundamentacao:ageis:fatores} é possível refinar o GAD, e, assim, obter uma representação mais fiel ao mundo real.
+
+% Inserir figura do modelo do SBES
+{\color{red} Inserir Figura modelo:gad:freire}
+
+No modelo apresentado em \cite{freire}, a qualidade do TE depende diretamente de três principais nós: \textit{Colaboração}, \textit{Esforço} da equipe de desenvolvimento e \textit{Atributos da Equipe}. Entretanto, como foi decidido considerar o TE no contexto das relações entre os membros da equipe para alcançar os objetivos propostos, o nó \textit{Esforço} não se enquadra no contexto deste trabalho. Como é esperado que as equipes ágeis sejam auto-organizáveis \cite{manifesto}, o nó \textit{Esforço} foi substituído por \textit{Auto-Organização}. Dessa forma, o fator principal, \textit{Trabalho em Equipe}, passa a depender diretamente dos nós: \textit{Colaboração}, \textit{Auto-Organização} e \textit{Atributos da Equipe} (Figura \ref{modelo:gad:altonivel}).
+
+% Inserir figura do modelo em alto nível
+{\color{red} Inserir Figura modelo:gad:altonivel}
+
+No modelo tomado como base, o nó \textit{Colaboração} depende diretamente dos nós \textit{Comunicação} e \textit{Reuniões}. \textit{Comunicação}, por sua vez, depende diretamente dos seguintes nós: \textit{Frequência}, \textit{Informalidade}, \textit{Estrutura} - possibilidade dos membros da equipe se comunicarem diretamente com os outros membros do time - e \textit{Abertura}, que está relacionada com o ato de não haver contenção de informação entre os membros da equipe.
+
