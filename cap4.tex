@@ -6,7 +6,7 @@ Conforme explicado na Seção \ref{fundamentacao:redes:construcao}, a construç�
 \section{Construção do GAD}
 \label{modelo:gad}
 
-Nesta fase da construção do modelo é necessário identificar os fatores-chave que influenciam a qualidade do TE de equipes ágeis e os relacionamentos entre esses fatores. Como base para a construção do GAD, optou-se por utilizar modelo proposto em \cite{freire} (Figura \ref{modelo:gad:freire}). Nesse modelo, os nós que estão englobados por um retângulo são sub-redes, que estão detalhadas em separado para facilitar o entendimento. De acordo com os autores, o modelo apresentado é uma boa representação do mundo real. Entretanto, uma de suas limitações é que ele foi construído com base em apenas um trabalho. Assim, a partir desse modelo e dos fatores descritos na Seção \ref{fundamentacao:ageis:fatores} é possível refinar o GAD, e, assim, obter uma representação mais fiel ao mundo real.
+Nesta fase da construção do modelo é necessário identificar os fatores-chave que influenciam a qualidade do TE de equipes ágeis e os relacionamentos entre esses fatores. Como base para a construção do GAD, optou-se por utilizar o modelo proposto em \cite{freire} (Figura \ref{modelo:gad:freire}). Nesse modelo, os nós que estão englobados por um retângulo são sub-redes, que estão detalhadas separadamente para facilitar o entendimento. De acordo com os autores, o modelo apresentado é uma boa representação do mundo real. Entretanto, uma de suas limitações é que ele foi construído com base em apenas um trabalho. Assim, a partir desse modelo e dos fatores descritos na Seção \ref{fundamentacao:ageis:fatores} é possível refinar o GAD, e, assim, obter uma representação mais fiel ao mundo real.
 
 % Inserir figura do modelo do SBES
 {\color{red} Inserir Figura modelo:gad:freire}
@@ -16,5 +16,45 @@ No modelo apresentado em \cite{freire}, a qualidade do TE depende diretamente de
 % Inserir figura do modelo em alto nível
 {\color{red} Inserir Figura modelo:gad:altonivel}
 
-No modelo tomado como base, o nó \textit{Colaboração} depende diretamente dos nós \textit{Comunicação} e \textit{Reuniões}. \textit{Comunicação}, por sua vez, depende diretamente dos seguintes nós: \textit{Frequência}, \textit{Informalidade}, \textit{Estrutura} - possibilidade dos membros da equipe se comunicarem diretamente com os outros membros do time - e \textit{Abertura}, que está relacionada com o ato de não haver contenção de informação entre os membros da equipe.
+No modelo tomado como base, o nó \textit{Colaboração} depende diretamente dos nós \textit{Comunicação} e \textit{Reuniões}. \textit{Comunicação}, por sua vez, depende diretamente dos seguintes nós: \textit{Frequência}, \textit{Informalidade}, \textit{Estrutura} - possibilidade dos membros da equipe se comunicarem diretamente com os outros membros do time - e \textit{Abertura}, que está relacionada com o ato de não haver contenção de informação entre os membros da equipe. Como forma de minimizar a complexidade dos cálculos efetuados \cite{} e o viés que pode ser introduzido em virtude da subjetidade que esse nós representam, optou-se por substituir esses quatro nós por \textit{Distribuição da Equipe} e \textit{Cara-a-Cara}. Esse nós estão relacionados, respectivamente, com o fato dos membros da equipe compartilharem a mesma localidade e conversarem cara-a-cara diariamente. Dessa forma, a \textit{Distribuição da Equipe} substitui a \textit{Frequência}, uma vez que o fato de os membros da equipe compartilharem o mesmo local facilita a comunicação \cite{lalsing} e, assim, contribui para que a comunicação ocorra em maior frequência. Já o nó \textit{Cara-a-Cara} substitui a \textit{Informalidade}, \textit{Estrutura} e \textit{Abertura}, tendo em vista que essa prática contribui para que essas características se façam na presentes na \textit{Comunicação}.
 
+O nó \textit{Reuniões}, que no modelo base depende diretamente dos nós \textit{Planejamento da Iteração}, \textit{Retrospectiva da Iteração} e \textit{Reuniões Diárias} foi substituído apenas pelo nó \textit{Reuniões Diárias}. Essa decisão foi tomada porque o que ocorre na \textit{Retrospectiva da Iteração} não influenciará mais o TE na iteração que se passou. O \textit{Planejamento da Iteração}, por sua vez, está relacionado com utilização de técnicas de Engenharia de \textit{Software} que facilitam na prevenção contra riscos e estimativa de tempo para cumprimento de atividades. Além disso, não é objetivo do \textit{Planejamento da Iteração} melhorar a \textit{Comunicação} e a \textit{Colaboração} das equipes.
+
+Conforme descrito em \cite{freire}, o nó \textit{Reuniões Diárias} depende diretamente dos seguintes nós: \textit{Limite de 15 Minutos}, \textit{3 Perguntas} - "O que eu fiz hoje?", "O que farei amanhã?" e "Quais obstáculos estão impedindo o meu progresso?" - e \textit{Presença de Todos os Membros}. Entretanto, de acordo com Moe et al. \cite{moe2}, é necessário aplicar o \textit{Monitoramento} para que os membros da equipe observem as atividades e a eficiência dos outros integrantes, além de reconhecerem quando um membro da equipe atua corretamente, provendo \textit{feedback} e apoio. Logo, como o objetivo das perguntas é permitir aos participantes identificar potenciais barreiras e manter a coordenação da equipe, e isso está relacionando com o \textit{Monitoramento}, decidiu-se renomear o nó \textit{3 Perguntas} para \textit{Monitoramento}. Além disso, as três perguntas as quais o nó está relacionado são referentes ao contexto de \textit{Scrum}, e o modelo proposto neste trabalho é para avaliação do TE de equipes ágeis em geral. Decidiu-se remover o nó \textit{Limite de 15 minutos} porque ele não é considerado um indicador de qualidade dessas reuniões.
+
+Em \cite{moe}, são descritos cinco fatores que precisam ser levados em conta para melhorar o TE de equipes ágeis. São eles: \textit{Liderança Compartilhada}, \textit{Orientação da Equipe}, \textit{Redundância}, \textit{Aprendizagem da Equipe} e \textit{Autonomia da Equipe}. A seguir, há a definição de cada um desses fatores com base nesse trabalho anteriormente citado:
+
+\begin{itemize}
+  \item \textit{Liderança Compartilhada}: Todos os membros da equipe compartilharem a autoridade das decisões em vez centralizá-la. Dessa forma, evita que apenas uma pessoa tome as decisões, ou todos os membros da equipe tomem decisões levando em consideração apenas o seu trabalho individual, independente dos outros membros da equipe. Geralmente, o indivíduo que possui o conhecimento necessário durante uma determinada fase do projeto assume a liderança, compartilhando os seus conhecimentos, e permitindo que todos participem do processo de tomada de decisões;
+  \item \textit{Orientação da Equipe}: Priorização dos objetivos da equipe em vez dos objetivos indivíduais, respeitando o compartamento de cada um dos membros da equipe;
+  \item \textit{Redundância}: Os membros da equipe podem substituir uns aos outros sem treinamento extenso;
+  \item \textit{Aprendizagem da Equipe}: Melhoria contínua dos métodos de trabalho com base nos \textit{feedbacks} fornecidos à equipe;
+  \item \textit{Autonomia da Equipe}: As decisões tomadas pela equipe são respeitadas pelos gerentes que estão fora dela.
+\end{itemize}
+
+Ainda sobre as \textit{Reuniões Diárias}, durante elas, os membros da equipe tem a possibilidade de regular seus limites e condições, escolhendo em quais atividades desejam trabalhar, além de negociar e discutir sobre prevenção contra riscos e medidas corretivas. Como isso está relacionado à \textit{Autonomia da Equipe}, também foi decidido adicioná-lo como nó que influencia as \textit{Reuniões Diárias}. Dessa forma, tem-se que as \textit{Reuniões Diárias} tornam-se diretamente dependentes de \textit{Monitoramento}, \textit{Presença de Todos os Membros} e \textit{Autonomia da Equipe}.
+
+Além disso, conforme supracitado, pode-se concluir que a \textit{Orientação da Equipe} contribui diretamente para a \textit{Colaboração} da equipe, pois há uma preocupação em priorizar os objetivos da equipe em vez dos objetivos individuais. Dessa forma, é necessário que os membros da equipes trabalhem de forma coesa, colaborando para que os objetivos da equipe sejam sempre alcançados. Por isso, decidiu-se adicionar o nó \textit{Orientação da Equipe} como influenciate do nó \textit{Colaboração}. Com isso, conforme representado na Figura \ref{modelo:gad:colaboracao}, o nó \textit{Colaboração} passa a depender diretamente dos nós \textit{Comunicação}, \textit{Orientação da Equipe} e \textit{Reuniões Diárias}.
+
+% Inserir figura da colaboração
+{\color{red} Inserir Figura modelo:gad:colaboracao}
+
+\textit{Auto-Organização} é um dos novos nós que foi adicionado ao modelo, mas que está influencia diretamente o TE. Na literatura, é estabelecido que a autoridade da decisão e da liderança de equipes auto-organizáveis precisas ser compartilhada \cite{morgan} \cite{kirkman}. Além disso, ainda em \cite{morgan}, é dito que equipes auto-organizáveis requerem uma capacidade de aprendizagem das equipes para que elas possam adaptar-se às transformações que ocorrem no ambiente. Ainda de acordo com \cite{morgan}, toda equipe que possui a capacidade de se auto-gerenciar precisa de um certo grau de \textit{Redundância}. Logo, com base nessas afirmações, os nós \textit{Liderança Compartilhada}, \textit{Aprendizagem da Equipe} e \textit{Redundância} foram adicionados como pais do nó \textit{Auto-Organização}. Na Figura \ref{modelo:gad:autogerenciamento} está representado o nó \textit{Auto-Organização} em conjunto com seus nós pai.
+
+% Inserir figura do auto-gerenciamento
+{\color{red} Inserir Figura modelo:gad:autogerenciamento}
+
+O nó \textit{Atributos da Equipe} foi mantido como proposto no modelo em \cite{freire}. A Figura \ref{modelo:gad:atributos} contém a representação gráfica desse nó em particular.
+
+% Inserir figura dos atributos da equipe
+{\color{red} Inserir Figura modelo:gad:atributos}
+
+Finalmente, após definir os nós do GAD e os relacionamentos entre eles, a Figura \ref{modelo:gad:final} contém o GAD completo.
+
+% Inserir figura dos atributos da equipe
+{\color{red} Inserir Figura modelo:gad:final}
+
+\section{Definição das Funções de Probabilidade}
+\label{modelo:funcoes}
+
+{\color{red} Acredito que vai ser o método de Raissa, mas como ainda não está finalizado, não posso descrever...}
