@@ -8,13 +8,23 @@ Conforme explicado na Seção \ref{fundamentacao:redes:construcao}, a construç�
 
 Nesta fase da construção do modelo é necessário identificar os fatores-chave que influenciam a qualidade do TE de equipes ágeis e os relacionamentos entre esses fatores. Como base para a construção do GAD, optou-se por utilizar o modelo proposto em \cite{freire} (Figura \ref{modelo:gad:freire}). Nesse modelo, os nós que estão englobados por um retângulo são sub-redes, que estão detalhadas separadamente para facilitar o entendimento. De acordo com os autores, o modelo apresentado é uma boa representação do mundo real. Entretanto, uma de suas limitações é que ele foi construído com base em apenas um trabalho. Assim, a partir desse modelo e dos fatores descritos na Seção \ref{fundamentacao:ageis:fatores} é possível refinar o GAD, e, assim, obter uma representação mais fiel ao mundo real.
 
-% Inserir figura do modelo do SBES
-{\color{red} Inserir Figura modelo:gad:freire}
+\begin{figure}[h!]	
+\begin{center}
+		\fbox{\includegraphics[scale=0.6]{figs/modeloSBES.pdf}}
+	\end{center}
+	\caption{Modelo Proposto por Freire et al.}
+	\label{modelo:gad:freire}
+\end{figure}
 
-No modelo apresentado em \cite{freire}, a qualidade do TE depende diretamente de três principais nós: \textit{Colaboração}, \textit{Esforço} da equipe de desenvolvimento e \textit{Atributos da Equipe}. Entretanto, como foi decidido considerar o TE no contexto das relações entre os membros da equipe para alcançar os objetivos propostos, o nó \textit{Esforço} não se enquadra no contexto deste trabalho. Como é esperado que as equipes ágeis sejam auto-organizáveis \cite{manifesto}, o nó \textit{Esforço} foi substituído por \textit{Auto-Organização}. Dessa forma, o fator principal, \textit{Trabalho em Equipe}, passa a depender diretamente dos nós: \textit{Colaboração}, \textit{Auto-Organização} e \textit{Atributos da Equipe} (Figura \ref{modelo:gad:altonivel}).
+No modelo apresentado em \cite{freire}, a qualidade do TE depende diretamente de três principais nós: \textit{Colaboração}, \textit{Esforço} da equipe de desenvolvimento e \textit{Atributos da Equipe}. Entretanto, como foi decidido considerar o TE no contexto das relações entre os membros da equipe para alcançar os objetivos propostos, o nó \textit{Esforço} não se enquadra no contexto deste trabalho. Como é esperado que as equipes ágeis sejam auto-organizáveis \cite{manifesto}, o nó \textit{Esforço} foi substituído por \textit{Auto-Gerenciamento}. Dessa forma, o fator principal, \textit{Trabalho em Equipe}, passa a depender diretamente dos nós: \textit{Colaboração}, \textit{Auto-Gerenciamento} e \textit{Atributos da Equipe} (Figura \ref{modelo:gad:altonivel}).
 
-% Inserir figura do modelo em alto nível
-{\color{red} Inserir Figura modelo:gad:altonivel}
+\begin{figure}[h!]	
+\begin{center}
+		\fbox{\includegraphics[scale=0.9]{figs/modeloAltoNivel.pdf}}
+	\end{center}
+	\caption{Representação do modelo proposto em alto nível.}
+	\label{modelo:gad:altonivel}
+\end{figure}
 
 No modelo tomado como base, o nó \textit{Colaboração} depende diretamente dos nós \textit{Comunicação} e \textit{Reuniões}. \textit{Comunicação}, por sua vez, depende diretamente dos seguintes nós: \textit{Frequência}, \textit{Informalidade}, \textit{Estrutura} - possibilidade dos membros da equipe se comunicarem diretamente uns com os outros - e \textit{Abertura}, que está relacionada com o ato de não haver contenção de informação entre os membros da equipe. Como forma de minimizar a complexidade dos cálculos efetuados \cite{} e o viés que pode ser introduzido em virtude da subjetidade que esse nós representam, optou-se por substituir esses quatro nós por \textit{Distribuição da Equipe} e \textit{Cara-a-Cara}. Esse nós estão relacionados, respectivamente, com o fato dos membros da equipe compartilharem a mesma localidade e conversarem cara-a-cara diariamente. Dessa forma, a \textit{Distribuição da Equipe} substitui a \textit{Frequência}, uma vez que o fato de os membros da equipe compartilharem o mesmo local facilita a comunicação \cite{lalsing} e, assim, contribui para que a comunicação ocorra em maior frequência. Já o nó \textit{Cara-a-Cara} substitui a \textit{Informalidade}, \textit{Estrutura} e \textit{Abertura}, tendo em vista que essa prática contribui para que essas características se façam na presentes na \textit{Comunicação}.
 
@@ -36,23 +46,43 @@ Ainda sobre as \textit{Reuniões Diárias}, durante elas, os membros da equipe t
 
 Além disso, conforme supracitado, pode-se concluir que a \textit{Orientação da Equipe} contribui diretamente para a \textit{Colaboração} da equipe, pois há uma preocupação em priorizar os objetivos da equipe em vez dos objetivos individuais. Dessa forma, é necessário que os membros da equipes trabalhem de forma coesa, colaborando para que os objetivos da equipe sejam sempre alcançados. Por isso, decidiu-se adicionar o nó \textit{Orientação da Equipe} como influenciate do nó \textit{Colaboração}. Com isso, conforme representado na Figura \ref{modelo:gad:colaboracao}, o nó \textit{Colaboração} passa a depender diretamente dos nós \textit{Comunicação}, \textit{Orientação da Equipe} e \textit{Reuniões Diárias}.
 
-% Inserir figura da colaboração
-{\color{red} Inserir Figura modelo:gad:colaboracao}
+\begin{figure}[h!]	
+\begin{center}
+		\fbox{\includegraphics[scale=0.68]{figs/modeloColaboracao.pdf}}
+	\end{center}
+	\caption{Colaboração e os fatores que a influenciam.}
+	\label{modelo:gad:colaboracao}
+\end{figure}
 
-\textit{Auto-Organização} é um dos novos nós que foi adicionado ao modelo, e influencia diretamente o TE. Na literatura, é estabelecido que a autoridade da decisão e da liderança de equipes auto-organizáveis precisa ser compartilhada \cite{morgan} \cite{kirkman}. Além disso, ainda em \cite{morgan}, é dito que equipes auto-organizáveis requerem uma capacidade de aprendizagem das equipes para que elas possam adaptar-se às transformações que ocorrem no ambiente. Ainda de acordo com \cite{morgan}, toda equipe que possui a capacidade de se auto-gerenciar precisa de um certo grau de \textit{Redundância}. Logo, com base nessas afirmações, os nós \textit{Liderança Compartilhada}, \textit{Aprendizagem da Equipe} e \textit{Redundância} foram adicionados como pais do nó \textit{Auto-Organização}. Na Figura \ref{modelo:gad:autogerenciamento} está representado o nó \textit{Auto-Organização} em conjunto com seus nós pai.
+\textit{Auto-Gerenciamento} é um dos novos nós que foi adicionado ao modelo, e influencia diretamente o TE. Na literatura, é estabelecido que a autoridade da decisão e da liderança de equipes auto-organizáveis precisa ser compartilhada \cite{morgan} \cite{kirkman}. Além disso, ainda em \cite{morgan}, é dito que equipes auto-organizáveis requerem uma capacidade de aprendizagem das equipes para que elas possam adaptar-se às transformações que ocorrem no ambiente. Ainda de acordo com \cite{morgan}, toda equipe que possui a capacidade de se auto-gerenciar precisa de um certo grau de \textit{Redundância}. Logo, com base nessas afirmações, os nós \textit{Liderança Compartilhada}, \textit{Aprendizagem da Equipe} e \textit{Redundância} foram adicionados como pais do nó \textit{Auto-Gerenciamento}. Na Figura \ref{modelo:gad:autogerenciamento} está representado o nó \textit{Auto-Gerenciamento} em conjunto com seus nós pai.
 
-% Inserir figura do auto-gerenciamento
-{\color{red} Inserir Figura modelo:gad:autogerenciamento}
+\begin{figure}[h!]	
+\begin{center}
+		\fbox{\includegraphics[scale=0.9]{figs/modeloAutoGerenciamento.pdf}}
+	\end{center}
+	\caption{Auto-Gerenciamento e os fatores que o influenciam.}
+	\label{modelo:gad:autogerenciamento}
+\end{figure}
 
 O nó \textit{Atributos da Equipe} foi mantido como proposto no modelo em \cite{freire}. A Figura \ref{modelo:gad:atributos} contém a representação gráfica desse nó em particular.
 
-% Inserir figura dos atributos da equipe
-{\color{red} Inserir Figura modelo:gad:atributos}
+\begin{figure}[h!]	
+\begin{center}
+		\fbox{\includegraphics[scale=0.9]{figs/modeloAtributos.pdf}}
+	\end{center}
+	\caption{Atributos da Equipe e os fatores que o influenciam.}
+	\label{modelo:gad:atributos}
+\end{figure}
 
 Finalmente, após definir os nós do GAD e os relacionamentos entre eles, na Figura \ref{modelo:gad:final} é possível verificar o GAD completo.
 
-% Inserir figura dos atributos da equipe
-{\color{red} Inserir Figura modelo:gad:final}
+\begin{figure}[h!]	
+\begin{center}
+		\fbox{\includegraphics[scale=0.6]{figs/modeloFinal.pdf}}
+	\end{center}
+	\caption{Estrutura final do modelo proposto.}
+	\label{modelo:gad:final}
+\end{figure}
 
 \section{Definição das Funções de Probabilidade}
 \label{modelo:funcoes}
