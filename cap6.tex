@@ -1,9 +1,9 @@
 \chapter{Estudo de Caso}
 \label{estudodecaso}
 
-Estudo de caso é uma metodologia de pesquisa adequada para estudar fenômenos contemporâneos em seu contexto natural \cite{runeson}. Com base nisso e na necessidade de avaliar o modelo proposto neste e sua utilização, foi realizado um estudo de caso no Laboratório de Sistemas Embarcados e Computação Pervasiva (Embedded Lab)\footnote{\url{http://www.embeddedlab.org/}}. O Embedded Lab está localizado na Universidade Federal de Campina Grande (UFCG) e foi escolhido em virtude da relações envolvendo a academia e a indústria.
+Estudo de caso é uma metodologia de pesquisa adequada para estudar fenômenos contemporâneos em seu contexto natural \cite{runeson}. Com base nessa afirmação e na necessidade de avaliar o modelo proposto neste trabalho e sua utilização, foi realizado um estudo de caso no Laboratório de Sistemas Embarcados e Computação Pervasiva (Embedded Lab)\footnote{\url{http://www.embeddedlab.org/}}. O Embedded Lab está localizado na UFCG e foi escolhido em virtude das suas relações envolvendo a academia e a indústria.
 
-Vários projetos são executados no Embedded Lab em parceria com empresas com o objetivo de desenvolver produtos de \textit{software}. Em todos os projetos do Embedded Lab com foco em desenvolvimento de \textit{software}, a metodologia para gestão e planejamento utilizada é o \textit{Scrum}. Portanto, o contexto no qual este estudo de caso foi realizado é o de indústria, com utilização de \textit{Scrum} como metodologia ágil adotada. Assim, os resultados e conclusões obtidos neste estudo de caso são referentes a esse contexto. O estudo de caso foi realizado em quatro projetos, onde cada um deles foi considerado uma unidade de análise. {\color{red} A duração foi de X dias.}
+Vários projetos são executados no Embedded Lab em parceria com empresas com o objetivo de desenvolver produtos de \textit{software}. Em todos os projetos do Embedded Lab com foco em desenvolvimento de \textit{software}, a metodologia para gestão e planejamento utilizada é o \textit{Scrum}. Portanto, o contexto no qual este estudo de caso foi realizado é o de indústria, com utilização de \textit{Scrum} como metodologia ágil adotada. Assim, os resultados e conclusões obtidos neste estudo de caso são referentes a esse contexto. O estudo de caso foi realizado em X projetos, onde cada um deles foi considerado uma unidade de análise. {\color{red} A duração foi de X dias.}
 
 \section{\textit{Design} do Estudo de Caso}
 \label{estudodecaso:design}
@@ -36,8 +36,8 @@ Logo, com base nos objetos de estudo definidos, deseja-se avaliar: a precisão d
 Com base nos objetivos definidos para este estudo de caso e visando alcançá-los, foram definidas as seguintes questões de pesquisa:
 
 \begin{itemize}
-  \item \textit{PP1}: O modelo proposto mensura de forma precisa o Trabalho em Equipe de equipes Scrum?
-  \item \textit{PP2}: A utilização do modelo auxília na detecção de oportunidades de melhoria do Trabalho em Equipe de equipes Scrum?
+  \item \textit{PP1}: O modelo proposto mensura de forma precisa o TE de equipes Scrum?
+  \item \textit{PP2}: A utilização do modelo auxília na detecção de oportunidades de melhoria do TE de equipes Scrum?
   \item \textit{PP3}: A abordagem proposta é de fácil implementação e utilização?
   \item \textit{PP4}: O custo-benefício de utilizar a abordagem é positivo?
 \end{itemize}
@@ -74,15 +74,71 @@ Para cada unidade de análise, os sujeitos são líderes de projeto que atuam co
 
 A coleta de dados é uma atividade necessária para responder as questões de pesquisas de um estudo de caso experimental. De acordo com Lethbridge et al. \cite{}, há três diferentes categorias de métodos para coleta de dados: direto (e.g., entrevistas), indireto (e.g., \textit{survey}) e independente (e.g., análise de documentação). Portanto, o método utilizado para coleta de dados desse estudo de caso é o indireto, uma vez que os dados serão coletados por meio de questionários.
 
+\subsection{Procedimento}
+\label{estudodecaso:design:procedimento}
+
+Neste estudo de caso, foi utilizada a ferramenta AgenaRisk\footnote{\url{http://www.agenarisk.com/}} para efetuar os cálculos do modelo. Em virtude de algumas limitações com licensas da ferramenta, o modelo foi criado e todos os cálculos realizados na máquina do pesquisador. Após a obtenção dos resultados, eles foram apresentados aos sujeitos em seguida pelo pesquisador. Após a definição do modelo, e dos questionários para avaliação do TE e da abordagem, este estudo de caso foi dividido em duas fases: \textit{Treinamento} e \textit{Utilização da Abordagem}.
+
+\subsubsection{Fase 1 - Treinamento}
+\label{estudodecaso:design:procedimento:treinamento}
+
+O objetivo desta fase do estudo de caso é prover aos sujeitos o entendimento dos conceitos relacionados aos objetos de estudo. Assim, espera-se que ao final dessa fase qualquer dúvida em relação à esses fatores seja sanada para que os resultados não sejam influenciados por má-interpretação das perguntas dos questionários.
+
+À princípio, os conceitos de \textit{Redes Bayesianas}, \textit{Ranked Nodes}, além de \textit{Funções de Probabilidade}, suas aplicações e funcionamento foram explicados para facilitar o entendimento da construção do modelo. Após isso, o modelo proposto nesta dissertação, e o relacionamento entre os fatores que o compõem foram explicados. Em seguida, foi explicado como seria realizado o processo de coleta de dados e quais perguntas do questionário de alimentação do modelo são referentes à quais nós de entrada do modelo. Por fim, foi explicado como é feita a análise dos resultados gerados pelo modelo, e como é possível identificar oportunidades de melhoria no TE. Alguns exemplos foram utilizados nessa fase para auxiliar no entendimento dos sujeitos.
+
+\subsubsection{Fase 2 - Utilização da Abordagem}
+\label{estudodecaso:design:procedimento:abordagem}
+
+
+
+\subsection{Ameaças à Validade}
+\label{estudodecaso:design:ameacas}
+
+Runeson et al. \cite{runeson} afirmam que há diferentes maneiras de classificar aspectos da validade e ameaças à validade na literatura. No trabalho anteriormente citado, eles definem um esquema de classificação que distingue bem quatro aspectos da validade de um estudo de caso. São eles: \textit{Validade de Construção}, \textit{Validade Interna}, \textit{Validade Externa e Confiabilidade}.
+
+O aspecto da \textit{Validade de Construção} está relacionado com o fato de o que é estudado realmente representar o que o pesquisador tem em mente estar de acordo com as questões de pesquisa. Por exemplo, o assunto abordado nas entrevistas é interpretado pelos pesquisador e os entrevistados da maneira diferente. Portanto, neste estudo de caso, apesar do treinamento realizado para os sujeitos envolvidos, há a possibilidade deles interpretarem as perguntas dos questionários de tal forma que não condiz com os objetivos para os quais elas foram elaboradas.
+
+A \textit{Validade Interna} diz respeito ao ato de verificar se um determinado fator afeta o fator investigado, quando há o risco de um terceiro fator que influenciar o fator investigado. Logo, como neste estudo de caso adotou-se o TE como indicador do desempenho da equipe, e há outros fatores como FATOR A, FATOR B e FATOR C que influenciam o desempenho da equipe \cite{}, também há ameaças à \textit{Validade Interna deste estudo}.
+
+Com relação ao aspecto da \textit{Validade Externa}, que está relacionado em saber até que ponto é possível generalizar os resultados, e em que medida os resultados são de interesse para outras pessoas fora do caso investigado. Durante a análise da \textit{Validade Externa}, o pesquisador precisa analisar se os resultados podem ser relevantes para outros casos. Portanto, como os objetos de estudo deste estudo de caso foram avaliados para apenas X unidades de análise, talvez não seja possível generalizar os resultados para todas as equipes ágeis do mundo.
+
+Além desses aspectos, também há a \textit{Confiabilidade}, que está relacionada à dependência dos dados coletados e sua análise em relação ao pesquisador. Assim, como é necessário que os sujeitos deste estudo de caso respondam questionários com o intuito de poder avaliar as equipes que estão sendo lideradas por eles, há o risco de haver viés nos dados coletados. Isso pode acontecer não apenas pelo fato dos sujeitos estarem envolvidos com suas equipes e o seu trabalho, mas também pela possibilidade dos questionários não serem claros o suficiente para facilitar a sua resposta. Além disso, este estudo de caso foi conduzido apenas com equipes \textit{Scrum}, uma dentre as várias metodologias ágeis existentes. Logo, esses fatores também afetam a \textit{Confiabilidade} deste estudo de caso.
+
 \section{Coleta dos Dados}
 \label{estudodecaso:coleta}
 
+A coleta de dados necessária para responder as perguntas de pesquisa deste estudo de caso foi feita com a utilização de questionários, no formato de formulários online. Dessa forma, os sujeitos podem respondê-los quando acharem cômodo, de modo que não venha a incomodar em sua rotina de trabalho. Para a criação desses questionários, foi decidido utilizar o Google Forms\footnote{\url{https://www.google.com/forms/about/}}, ferramenta que permite criar questionários e armazenar os dados coletados neles em planilhas providas pela ferramenta Google Sheets\footnote{\url{https://www.google.com/sheets/about/}}. Além de permitir criar os questionários e armazenar os resultados, essas ferramentas também facilitam o compartilhamento de ambos, com a utilização de links.
 
+Como forma de alimentar os nós de entrada do modelo, foi criado um questionário com perguntas simples e diretas, visando diminuir o tempo necessário para respondê-lo. Para cada nó de entrada do modelo, uma ou mais perguntas foram elaboradas, e suas respostas são todas objetivas, de única escolha, na seguinta escala: Verdadeiro, Mais Verdadeiro que Falso, Nem Verdadeiro nem Falso, Mais Falso que Verdadeiro, Falso, Não aplicável. Essa escala foi adotada com base na ferramenta Comparative Agility\footnote{\url{https://comparativeagility.com/}}, que mede o quão ágil uma organização/equipe é, pois acredita-se que ela se adequa bem à este caso, uma vez que há uma seção relacionada ao Trabalho em Equipe no \textit{survey} que essa ferramenta utiliza para coletar os dados. Além dos dados para alimentação dos nós, perguntas relacionadas às métricas para o cálculo da medida de desempenho das equipes também foram inseridas nesse questionário.
+
+O questionário referente ao auxílio do modelo na tomada de decisões por parte dos sujeitos, contém perguntas diretas, que seguirão o mesmo padrão supracitado. Contudo, também haverá a oportunidade de inserção de texto puro, onde os sujeitos poderão comentar e dar mais opiniões à respeito da pergunta de pesquisa tratada. Essa mesma estratégia foi adotada para avaliar a facilidade da implementação e utilização da abordagem proposta, como também o custo-benefício de sua utilização.
+
+{\color{red} Falta mapear as hipóteses com as questões dos questionários. Será feito quando os questionários estiverem completamente definidos.}
 
 \section{Análise dos Dados}
 \label{estudodecaso:analise}
 
+\subsubsection{\textit{PP1}: O modelo proposto mensura de forma precisa o TE de equipes Scrum?}
 
+{\color{red} Descrever como foi respondida essa pergunta}
+
+\subsubsection{\textit{PP2}: A utilização do modelo auxília na detecção de oportunidades de melhoria do TE de equipes Scrum?}
+
+Para responder essa pergunta, foi necessário avaliar as hipóteses \textit{H0-2} e \textit{HA-2}. Assim, como a pergunta X do questionário de satisfação, que é a mesma pergunta que \textit{PP2}, e ela é respondida utilizando uma escala \textit{Likert} de cinco pontos, foi definida a seguinte condição:
+
+Caso $v_{q1B} \le 3$, onde $v_{q1B}$ representa a média das respostas para \textit{PP2}, deve-se aceitar \textit{H0-2}. Caso contrário, rejeita-se \textit{H0-2} e, consequentemente, assume-se que \textit{HA-2} é verdadeira.
+
+\subsubsection{\textit{PP3}: A abordagem proposta é de fácil implementação e utilização?}
+
+É necessário avaliar as hipóteses \textit{H0-3} e \textit{HA-3} para responder essa pergunta. Assim, como a pergunta X do questionário de satisfação, que é a mesma pergunta que \textit{PP3}, e ela é respondida utilizando uma escala \textit{Likert} de cinco pontos, foi definida a seguinte condição:
+
+Caso $v_{q2B} \le 3$, onde $v_{q2B}$ representa a média das respostas para \textit{PP3}, deve-se aceitar \textit{H0-3}. Caso contrário, rejeita-se \textit{H0-3} e, consequentemente, assume-se que \textit{HA-3} é verdadeira.
+
+\subsubsection{\textit{PP4}: O custo-benefício de utilizar a abordagem é positivo?}
+
+De forma análoga à \textit{PP2} e \textit{PP3}, para responder essa pergunta, é necessário avaliar as hipóteses \textit{H0-4} e \textit{HA-4}. Também foi definida uma pergunta no questionário de satisfação que corresponde à essa (Pergunta X), e que é respondida utilizando uma escala \textit{Likert} de cinco pontos. Logo, também de forma análoga à \textit{PP2} e \textit{PP3}, foi definida a seguinte condição:
+
+Caso $v_{q3B} \le 3$, onde $v_{q3B}$ representa a média das respostas para \textit{PP4}, deve-se aceitar \textit{H0-4}. Caso contrário, rejeita-se \textit{H0-4} e, consequentemente, assume-se que \textit{HA-4} é verdadeira.
 
 \section{Resultados}
 \label{estudodecaso:resultados}
