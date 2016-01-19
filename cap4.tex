@@ -8,7 +8,7 @@ Conforme explicado na Seção \ref{fundamentacao:redes:construcao}, a construç�
 
 Nesta fase da construção do modelo é necessário identificar os fatores-chave que influenciam a qualidade do TE de equipes ágeis e os relacionamentos entre esses fatores. Como base para a construção do GAD, optou-se por utilizar o modelo proposto em \cite{freire} (Figura \ref{modelo:gad:freire}). De acordo com os autores, o modelo apresentado é uma boa representação do mundo real. Entretanto, uma de suas limitações é que ele foi construído com base em apenas um trabalho. Assim, a partir desse modelo e dos fatores descritos na Seção \ref{fundamentacao:ageis:fatores}, é possível refinar o GAD, e, assim, obter uma representação mais fiel ao mundo real.
 
-\begin{figure}[ht!]	
+\begin{figure}[ht!]
 \begin{center}
 		\fbox{\includegraphics[scale=0.6]{figs/modeloSBES.pdf}}
 	\end{center}
@@ -18,7 +18,7 @@ Nesta fase da construção do modelo é necessário identificar os fatores-chave
 
 No modelo apresentado em \cite{freire}, a qualidade do TE depende diretamente de três principais nós: \textit{Colaboração}, \textit{Esforço} da equipe de desenvolvimento e \textit{Atributos da Equipe}. Entretanto, como foi decidido considerar o TE no contexto das relações entre os membros da equipe para alcançar os objetivos propostos, o nó \textit{Esforço} não se enquadra no contexto deste trabalho. Como é esperado que as equipes ágeis sejam auto-organizáveis \cite{manifesto}, o nó \textit{Esforço} foi substituído por \textit{Auto-Gerenciamento}. Dessa forma, o fator principal, \textit{Trabalho em Equipe}, passa a depender diretamente dos nós: \textit{Colaboração}, \textit{Auto-Gerenciamento} e \textit{Atributos da Equipe} (Figura \ref{modelo:gad:altonivel}).
 
-\begin{figure}[ht!]	
+\begin{figure}[ht!]
 \begin{center}
 		\fbox{\includegraphics[scale=0.9]{figs/modeloAltoNivel.pdf}}
 	\end{center}
@@ -46,7 +46,7 @@ Ainda sobre as \textit{Reuniões Diárias}, durante elas, os membros da equipe t
 
 Além disso, conforme supracitado, pode-se concluir que a \textit{Orientação da Equipe} contribui diretamente para a \textit{Colaboração} da equipe, pois há uma preocupação em priorizar os objetivos da equipe em vez dos objetivos individuais. Dessa forma, é necessário que os membros da equipes trabalhem de forma coesa, colaborando para que os objetivos da equipe sejam sempre alcançados. Por isso, decidiu-se adicionar o nó \textit{Orientação da Equipe} como influenciate do nó \textit{Colaboração}. Com isso, conforme representado na Figura \ref{modelo:gad:colaboracao}, o nó \textit{Colaboração} passa a depender diretamente dos nós \textit{Comunicação}, \textit{Orientação da Equipe} e \textit{Reuniões Diárias}.
 
-\begin{figure}[ht!]	
+\begin{figure}[ht!]
 \begin{center}
 		\fbox{\includegraphics[scale=0.68]{figs/modeloColaboracao.pdf}}
 	\end{center}
@@ -56,7 +56,7 @@ Além disso, conforme supracitado, pode-se concluir que a \textit{Orientação d
 
 \textit{Auto-Gerenciamento} é um dos novos nós que foi adicionado ao modelo, e influencia diretamente o TE. Na literatura, é estabelecido que a autoridade da decisão e da liderança de equipes auto-organizáveis precisa ser compartilhada \cite{morgan} \cite{kirkman}. Além disso, ainda em \cite{morgan}, é dito que equipes auto-organizáveis requerem uma capacidade de aprendizagem das equipes para que elas possam adaptar-se às transformações que ocorrem no ambiente. Ainda de acordo com \cite{morgan}, toda equipe que possui a capacidade de se auto-gerenciar precisa de um certo grau de \textit{Redundância}. Logo, com base nessas afirmações, os nós \textit{Liderança Compartilhada}, \textit{Aprendizagem da Equipe} e \textit{Redundância} foram adicionados como pais do nó \textit{Auto-Gerenciamento}. Na Figura \ref{modelo:gad:autogerenciamento} está representado o nó \textit{Auto-Gerenciamento} em conjunto com seus nós pai.
 
-\begin{figure}[ht!]	
+\begin{figure}[ht!]
 \begin{center}
 		\fbox{\includegraphics[scale=0.9]{figs/modeloAutoGerenciamento.pdf}}
 	\end{center}
@@ -66,7 +66,7 @@ Além disso, conforme supracitado, pode-se concluir que a \textit{Orientação d
 
 O nó \textit{Atributos da Equipe} foi mantido como proposto no modelo em \cite{freire}. A Figura \ref{modelo:gad:atributos} contém a representação gráfica desse nó em particular.
 
-\begin{figure}[ht!]	
+\begin{figure}[ht!]
 \begin{center}
 		\fbox{\includegraphics[scale=0.9]{figs/modeloAtributos.pdf}}
 	\end{center}
@@ -76,7 +76,7 @@ O nó \textit{Atributos da Equipe} foi mantido como proposto no modelo em \cite{
 
 Finalmente, após definir os nós do GAD e os relacionamentos entre eles, na Figura \ref{modelo:gad:final} é possível verificar o GAD completo.
 
-\begin{figure}[ht!]	
+\begin{figure}[ht!]
 \begin{center}
 		\fbox{\includegraphics[scale=0.57]{figs/modeloFinal.pdf}}
 	\end{center}
@@ -87,4 +87,13 @@ Finalmente, após definir os nós do GAD e os relacionamentos entre eles, na Fig
 \section{Definição das Funções de Probabilidade}
 \label{modelo:funcoes}
 
-{\color{red} Acredito que vai ser o método de Raissa, mas como ainda não está finalizado, não posso descrever...}
+Apesar de \textit{Redes Bayesianas} serem um úteis para resolverem problemas reais relacionados com risco, o seu uso ainda é restrito devido a dificuldade em definir as TPN. Há duas maneiras de
+de se coletar dados para definir as TPN de uma \textit{Rede Bayesiana}: base de dados ou opinião de especialistas. Contudo, não é fácil encontrar uma base de dados adequada para um cenário específico de um problema prático. Por outro lado, a definição das TPN com a ajuda de especialistas requer bastante esforço (e.g., definir TPN para nós com um número muito alto de estados ou alta quantidade de pais). Isso pode acarretar em vários tipos de inconsistências no modelo \cite{fenton}.
+
+Portanto, ainda em \cite{fenton}, é proposta uma abordagem simples para definição das TPN com a ajuda de especialistas. Essa abordagem é baseada numa distribuição normal duplamente truncada que usa como média, invariavelmente, um tipo de função ponderada que utiliza os nós pai. O fato de todos os nós do modelo apresentado na Seção \ref{modelo:gad} são \textit{Nós Ranqueados} e da ausência de uma base de dados para problema relacionado à este trabalho, decidiu-se utilizar essa abordagem.
+
+Um especialista em \textit{Redes Bayesianas} e Métodos Ágeis foi o responsável para realizar a definição das funções de probabilidade dos nós. Para cada nó filho, o especialista deve definir quais as probabilidades desse nó estar em cada estado, com base nos estados dos nós pai. Por exemplo, para um nó com dois pais, são feitas as seguintes perguntas:
+
+\begin{itemize}
+  \item
+\end{itemize}

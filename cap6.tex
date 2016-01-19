@@ -60,19 +60,72 @@ Assim, \textit{H0-1} e \textit{HA-1} estão relacionadas à \textit{PP1}, \texti
 \subsection{Unidades de Análise}
 \label{estudodecaso:design:unidades}
 
-{\color{red} Ainda não está definido... Precisamos das informações das equipes.}
+\begin{longtable}{
+|p{0.25\dimexpr \textwidth-3\arrayrulewidth-4\tabcolsep\relax}|
+ p{0.25\dimexpr \textwidth-3\arrayrulewidth-4\tabcolsep\relax}|
+ p{0.25\dimexpr \textwidth-3\arrayrulewidth-4\tabcolsep\relax}|
+ p{0.25\dimexpr \textwidth-3\arrayrulewidth-4\tabcolsep\relax}|
+}
+\caption{Descrição das Unidades de Análise.\label{unidades}}\\
+
+\hline
+& \multicolumn{3}{|c|}{\textbf{Projeto}}\\
+\hline
+\multicolumn{1}{|c|}{\textbf{Característica}} & \textbf{A} & \textbf{B} & \textbf{C}\\
+\hline
+\endfirsthead
+
+\hline
+\multicolumn{4}{|c|}{Continuação da Tabela \ref{unidades}}\\
+\hline
+& \multicolumn{3}{|c|}{\textbf{Projeto}}\\
+\hline
+\multicolumn{1}{|c|}{\textbf{Característica}} & \textbf{A} & \textbf{B} & \textbf{C}\\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+% \multicolumn{2}{| c |}{End of Table}\\
+% \hline\hline
+% \endlastfoot
+
+Experiência, em média de anos, dos integrantes da equipe participando em projetos de desenvolvimento de \textit{software} & 2.5 & 2 & 2 \\ \hline
+Experiência, em média de anos, dos integrantes da equipe trabalhando em equipes ágeis & 1 & 1 & 2 \\ \hline
+Breve descrição do cronograma do projeto & O cronograma inicial do projeto parecia ser tranquilo, mas como parte da equipe foi alocada para dar manutenção ao projeto anterior, acabou ficando mais apertado. & O projeto atual tem um cronograma que é relativamente fácil de alcançar, mas dependemos muito de outra entidade que está desenvolvendo o \textit{Hardware} que iremos trabalhar. & Cronograma sendo seguido no prazo, ficando apertado em alguns momentos. Algumas mudanças de requisitos geraram algum retrabalho, o que pode vir a comprometer algum item do cronograma inicial. \\ \hline
+Breve descrição do escopo do projeto & Moderado. Os aplicativos a desenvolver são relativamente simples, mas a diversidade das plataformas suportadas contribui muito para a complexidade. & Uma ferramenta para monitoramento e controle de ativos de segurança patrimonial, é complexo. & Projeto de grande relevância para o cliente e complexo do ponto de vista de integração entre os componentes. O produto final depende da integração de componentes de \textit{software} e \textit{hardware} desenvolvidos por equipes do Embedded e do cliente. \\ \hline
+Breve descrição da plataforma e tecnologias utilizadas no projeto & Plataforma: Desktop/Tablet (x86), Windows 8-10. Tecnologias: Visual Studio (com ReSharper), .NET / C\# e NUnit. & A plataforma utilizada no projeto é Android. Tecnologias utilizadas: SIP e RTSP. & Plataforma: Web. Tecnologias: Django e Python. \\ \hline
+
+\end{longtable}
 
 \subsection{Sujeitos - Quem utiliza a abordagem e o modelo?}
 \label{estudodecaso:design:sujeitos}
 
 Para cada unidade de análise, os sujeitos são líderes de projeto que atuam como \textit{Scrum Masters}. No Embedded Lab, esses sujeitos realizam atividades relacionadas ao processo e o gerenciamento da equipe, atividades relacionadas ao \textit{design} dos produtos, do ponto de vista gráfico e arquitetural de produto, além de implementação.
 
-{\color{red} Falta descrever os Scrum Masters em termos de experiência...}
+Na Tabela \ref{sujeitos}, são apresentados os perfis dos sujeitos em relação à experiência, em anos, desenvolvendo \textit{software}, liderando projetos de desenvolvimento, utilizando métricas no suporte à tomada de decisões e utilizando métodos ágeis.
+
+\begin{table}[ht!]
+\centering
+\caption{Perfis dos Sujeitos}
+\label{sujeitos}
+\resizebox{\textwidth}{!}{\begin{tabular}{|l|c|c|c|}
+\hline
+ & \multicolumn{3}{c|}{\textbf{Sujeito}} \\ \hline
+\multicolumn{1}{|c|}{\textbf{Característica}}                                           & \textbf{1}  & \textbf{2} & \textbf{3} \\ \hline
+Experiência, em anos, trabalhando em projetos de desenvolvimento de \textit{software}            & 5           & 10         & 10         \\ \hline
+Experiência, em anos, liderando projetos de desenvolvimento de \textit{software}                 & 0.5         & 3          & 2          \\ \hline
+Experiência, em anos, utilizando métricas e indicadores no suporte à tomada de decisões & 1.5         & 2          & 6          \\ \hline
+Experiência, em anos, utilizando métodos ágeis                                          & 5           & 2          & 7          \\ \hline
+\end{tabular}}
+\end{table}
 
 \subsection{Métodos}
 \label{estudodecaso:design:metodos}
 
-A coleta de dados é uma atividade necessária para responder as questões de pesquisas de um estudo de caso experimental. De acordo com Lethbridge et al. \cite{}, há três diferentes categorias de métodos para coleta de dados: direto (e.g., entrevistas), indireto (e.g., \textit{survey}) e independente (e.g., análise de documentação). Portanto, o método utilizado para coleta de dados desse estudo de caso é o indireto, uma vez que os dados serão coletados por meio de questionários.
+A coleta de dados é uma atividade necessária para responder as questões de pesquisas de um estudo de caso experimental. De acordo com Lethbridge et al. \cite{lethbridge}, há três diferentes categorias de métodos para coleta de dados: direto (e.g., entrevistas), indireto (e.g., \textit{survey}) e independente (e.g., análise de documentação). Portanto, o método utilizado para coleta de dados desse estudo de caso é o indireto, uma vez que os dados serão coletados por meio de questionários.
 
 \subsection{Procedimento}
 \label{estudodecaso:design:procedimento}
