@@ -92,8 +92,78 @@ de se coletar dados para definir as TPN de uma \textit{Rede Bayesiana}: base de 
 
 Portanto, ainda em \cite{fenton}, é proposta uma abordagem simples para definição das TPN com a ajuda de especialistas. Essa abordagem é baseada numa distribuição normal duplamente truncada que usa como média, invariavelmente, um tipo de função ponderada que utiliza os nós pai. O fato de todos os nós do modelo apresentado na Seção \ref{modelo:gad} são \textit{Nós Ranqueados} e da ausência de uma base de dados para problema relacionado à este trabalho, decidiu-se utilizar essa abordagem.
 
-Um especialista em \textit{Redes Bayesianas} e Métodos Ágeis foi o responsável para realizar a definição das funções de probabilidade dos nós. Para cada nó filho, o especialista deve definir quais as probabilidades desse nó estar em cada estado, com base nos estados dos nós pai. Por exemplo, para um nó com dois pais, são feitas as seguintes perguntas:
+Um especialista em \textit{Redes Bayesianas} e Métodos Ágeis foi o responsável para realizar a definição das funções de probabilidade dos nós. Para cada nó filho, o especialista deve definir quais as probabilidades desse nó estar em cada estado, com base nos estados dos nós pai. Portanto, para um nó com dois pais, e tomando como exemplo a \textit{Rede Bayesiana} apresentada na Figura \ref{funcoes:bn1}, o especialista precisou preencher as células em branco da Tabela \ref{funcoes:2nos} com os valores esperados, de forma que, para cada combinação possível
 
-\begin{itemize}
-  \item
-\end{itemize}
+\begin{align}
+  \sum_{i=1}^{n}Pi = 1,\\
+  \intertext{onde $Pi$ é a probabilidade de cada estado e $n$ é a quantidade de estados \linebreak possíveis do nó filho}
+\end{align}
+
+\begin{figure}[ht!]
+\begin{center}
+		\fbox{\includegraphics[scale=0.8]{figs/BN-2nos.pdf}}
+	\end{center}
+	\caption{Exemplo de nó filho com dois pais.}
+	\label{funcoes:bn1}
+\end{figure}
+
+\begin{table}[ht!]
+\centering
+\caption{Tabela para definição das Funções de Probabilidade de nós com dois pais}
+\label{funcoes:2nos}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|l|}{}                      & \multicolumn{5}{c|}{\textbf{Valores Esperados para Y}}                                       \\ \hline
+\textbf{X1}          & \textbf{X2}          & \textbf{Muito Baixa} & \textbf{Baixa} & \textbf{Média} & \textbf{Alta} & \textbf{Muito Alta} \\ \hline
+\textbf{Muito Alta}  & \textbf{Muito Baixa} & $P_{1}$              & $P_{2}$        & $P_{3}$        & $P_{4}$       & $P_{5}$              \\ \hline
+\textbf{Muito Baixa} & \textbf{Muito Alta}  & $P_{1}$              & $P_{2}$        & $P_{3}$        & $P_{4}$       & $P_{5}$             \\ \hline
+\textbf{Muito Alta}  & \textbf{Média}       & $P_{1}$              & $P_{2}$        & $P_{3}$        & $P_{4}$       & $P_{5}$             \\ \hline
+\textbf{Média}       & \textbf{Muito Alta}  & $P_{1}$              & $P_{2}$        & $P_{3}$        & $P_{4}$       & $P_{5}$             \\ \hline
+\end{tabular}
+\end{table}
+
+De maneira análoga, para cada nó filho com três pais (e.g., Figura \ref{funcoes:bn2}), porém com uma maior quantidade de combinações possíveis, o especialista precisou preencher as células em branco de uma similar à Tabela \ref{funcoes:3nos}.
+
+\begin{figure}[ht!]
+\begin{center}
+		\fbox{\includegraphics[scale=0.8]{figs/BN-3nos.pdf}}
+	\end{center}
+	\caption{Exemplo de nó filho com três pais.}
+	\label{funcoes:bn2}
+\end{figure}
+
+\begin{table}[ht!]
+\centering
+\caption{Tabela para definição das Funções de Probabilidade de nós com três pais}
+\label{funcoes:3nos}
+\resizebox{\textwidth}{!}{\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{}                                             & \multicolumn{5}{c|}{\textbf{Valores Esperados para Y}}                                       \\ \hline
+\textbf{X1}          & \textbf{X2}          & \textbf{X3}          & \textbf{Muito Baixa} & \textbf{Baixa} & \textbf{Média} & \textbf{Alta} & \textbf{Muito Alta} \\ \hline
+\textbf{Muito Alta}  & \textbf{Muito Alta}  & \textbf{Muito Baixa} & $P_{1}$              & $P_{2}$        & $P_{3}$        & $P_{4}$       & $P_{5}$              \\ \hline
+\textbf{Muito Alta}  & \textbf{Muito Baixa} & \textbf{Muito Alta}  & $P_{1}$              & $P_{2}$        & $P_{3}$        & $P_{4}$       & $P_{5}$              \\ \hline
+\textbf{Muito Baixa} & \textbf{Muito Alta}  & \textbf{Muito Alta}  & $P_{1}$              & $P_{2}$        & $P_{3}$        & $P_{4}$       & $P_{5}$              \\ \hline
+\textbf{Muito Baixa} & \textbf{Muito Baixa} & \textbf{Muito Alta}  & $P_{1}$              & $P_{2}$        & $P_{3}$        & $P_{4}$       & $P_{5}$              \\ \hline
+\textbf{Muito Baixa} & \textbf{Muito Alta}  & \textbf{Muito Baixa} & $P_{1}$              & $P_{2}$        & $P_{3}$        & $P_{4}$       & $P_{5}$              \\ \hline
+\textbf{Muito Alta}  & \textbf{Muito Baixa} & \textbf{Muito Baixa} & $P_{1}$              & $P_{2}$        & $P_{3}$        & $P_{4}$       & $P_{5}$              \\ \hline
+\end{tabular}}
+\end{table}
+
+Assim, de acordo com a quantidade de nós pai de um determinado nó, foram definidas tabelas para cada um dos nós presentes no modelo proposto, exceto os nós de entrada. Uma vez que essas tabelas foram definidas, o especialista, com a ajuda de uma ferramenta, calculou os resultados reais para cada estado. Esses cálculos foram feitos diversas vezes, pois há a necessidade de definir qual função ponderada representa a tabela de probabilidade do nó em questão, além dos pesos de cada um dos nós pai praquela função. Esses cálculos são realizados diversas vezes até que a função e os pesos adequados, que mais se aproximem dos valores esperados, sejam encontrados. Além disso, o processo de definição das funções de probabilidade por parte do especialista é muito importante, pois caso haja inconsistências na definição do GAD, é necessário reorgarnizar a estrutura do grafo para garantir a consistência entre os conceitos e relacionamentos que estão sendo representados. Finalmente, ao final desse processo, o modelo está pronto para ser utilizado. A Tabela \ref{funcoes:pesos} contém as funções e os pesos dos nós pai de todos os nós do modelo, exceto os nós de entrada.
+
+\begin{table}[ht!]
+\centering
+\caption{Definição das Funções de Probabilidade}
+\label{funcoes:pesos}
+\resizebox{\textwidth}{!}{\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{\textbf{}}                                                                                                      & \multicolumn{3}{c|}{\textbf{Pais}}                                                                                                                                                                            & \multicolumn{3}{c|}{\textbf{Pesos}}                                      \\ \hline
+\textbf{Nó}                                                              & \textbf{Função} & \multicolumn{1}{l|}{\textbf{Variância}} & \textbf{Pai 2}                                                    & \textbf{Pai 2}                                                         & \textbf{Pai 3}                                                   & \textbf{Peso do Pai 1} & \textbf{Peso do Pai 2} & \textbf{Peso do Pai 3} \\ \hline
+\textbf{Trabalho em Equipe}                                              & wmin            & 0,0005                                  & Colaboração                                                       & Auto-Gerenciamento                                                     & \begin{tabular}[c]{@{}c@{}}Autonomia \\ da Equipe\end{tabular}   & 10                     & 10                     & 10                     \\ \hline
+\textbf{Colaboração}                                                     & wmin            & 0,0005                                  & Comunicação                                                       & Reuniões Diárias                                                       & \begin{tabular}[c]{@{}c@{}}Orientação \\ da Equipe\end{tabular}  & 10                     & 10                     & 10                     \\ \hline
+\textbf{Auto-Gerenciamento}                                              & wmin            & 0,0005                                  & Expertise                                                         & \begin{tabular}[c]{@{}c@{}}Liderança \\ Compartilhada\end{tabular}     & \begin{tabular}[c]{@{}c@{}}Aprendizagem\\ da Equipe\end{tabular} & 3                      & 2                      & 1                      \\ \hline
+\textbf{Comunicação}                                                     & wmin            & 0,0005                                  & \begin{tabular}[c]{@{}c@{}}Distribuição \\ da Equipe\end{tabular} & \begin{tabular}[c]{@{}c@{}}Meio \\ de Comunicação\end{tabular}         & X                                                                & 3                      & 5                      & X                      \\ \hline
+\textbf{Reuniões Diárias}                                                & wmin            & 0,0005                                  & Monitoramento                                                     & \begin{tabular}[c]{@{}c@{}}Presença de Todos\\ os Membros\end{tabular} & X                                                                & 7                      & 7                      & X                      \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Orientação \\ da Equipe\end{tabular}} & wmin            & 0,0005                                  & \begin{tabular}[c]{@{}c@{}}Atributos \\ Pessoais\end{tabular}     & Expertise                                                              & X                                                                & 5                      & 5                      & X                      \\ \hline
+\end{tabular}}
+\end{table}
