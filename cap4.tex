@@ -89,19 +89,42 @@ Finalmente, após definir os nós do GAD e os relacionamentos entre eles, na Fig
 
 Apesar de \textit{Redes Bayesianas} serem um úteis para resolverem problemas reais relacionados com risco e subjetividade, o seu uso ainda é restrito devido a dificuldade em definir as TPN. Há duas maneiras de se coletar dados para definir as TPN de uma \textit{Rede Bayesiana}: base de dados ou opinião de especialistas. Contudo, não é fácil encontrar uma base de dados adequada para um cenário específico de um problema prático. Por outro lado, a definição das TPN com a ajuda de especialistas requer bastante esforço (e.g., definir TPN para nós com um número muito alto de estados ou alta quantidade de pais, pois a quantidade de linhas de uma TPN aumenta exponencialmente em função da quantidade de pais do nó em questão). De acordo com Fenton et al. \cite{fenton}, isso pode acarretar em vários tipos de inconsistências no modelo.
 
-Ainda em \cite{fenton}, os autores propõem uma abordagem simples para definição das TPN com a ajuda de especialistas. Essa abordagem é baseada numa distribuição normal duplamente truncada que usa como média um tipo de função ponderada em função dos valores dos nós pai. Nessa abordagem, os especialistas devem avaliar a função de probabilidade de um nó baseando-se nos estados de seus nós pai, atribuindo a qual dos estados desse nó a tendência central corresponde. Por exemplo, levando em consideração a \textit{Rede Bayesiana} apresentada na Figura \ref{funcoes:bn1}, o especialista avalia a função para o nó \textit{Y} da seguinte forma: "Quando \textit{X1} for \textit{Muito Alto} e \textit{X2} \textit{Muito Baixo}, o valor \textit{Y} estará centrado em \textit{Médio}". Entretanto, a base dessa abordagem consiste em mapear os estados dos nós em uma escala numérica. Logo, quanto menos precisa a tendência central do nó filho, mais vaga será a distribuição da função atribuida.
+Há vários métodos que têm como objetivo diminuir a complexidade e para codificar a experiência em grandes TPN. Noisy-OR \cite{huang} e Noisy-MAX \cite{diez} são dois métodos bem estabelicidos. Contudo, Noisy-OR só pode ser aplicado a nós booleanos, e Noisy-MAX não é capaz de modelar o intervalo de relacionamentos que precisamos neste trabalho. Das \cite{das} propôs um algoritmo para popular as TPN que visa diminuir o tempo de duração para adquirir conhecimento de especialistas. Perkusich et al. \cite{perkusichNPT}, por sua vez, propõem um algoritmo cujo objetivo é ordenar os nós pai dadas as suas magnitudes relativas para o nó filho. Em seguida, com os nós filho ordenados, deve-se gerar as funções ponderadas com base na relevância dos nós pais e, finalmente, aplicá-las como funções de probabilidade dos nós.
+
+Por outro lado, Fenton et al. \cite{fenton} propõem uma abordagem para \textit{Redes Bayesianas} que faz utiliza \textit{Nós Ranqueados}. Essa abordagem é baseada numa distribuição normal duplamente truncada (TNormal) que usa como média um tipo de função ponderada em função dos valores dos nós pai. Essa distribuição é baseada em quatro parâmetros: $u$, média (i.e., tendência central); $\sigma^{2}$, variância (i.e., confiança dos resultados); $a$, limite inferior (i.e., 0); e $b$, limite superior (i.e., 1). Essa distribuição permite que quem a utilize modele uma varidade de formas (i.e., relacionamentos. Por exemplo: uma distribuição uniforme ($\sigma^{2} = \infty$) e distribuições muito enviesadas ($\sigma^{2} = 0$). Na Figura \ref{modelo:funcoes:tnormal} há alguns exemplos de funções TNormal.
+
+
+%\begin{figure}[ht!]
+%\begin{center}
+%		\fbox{\includegraphics[scale=0.57]{figs/tnormalExemplos.pdf}}
+%	\end{center}
+%	\caption{Exemplos de Funções TNormal.}
+%	\label{modelo:funcoes:tnormal}
+%\end{figure}
+
+Nessa abordagem, $u$ é definido por uma função ponderada baseada nos nós pai. Existem quatro tipos de funções ponderadas: média ponderada (WMEAN), mínimo ponderada (WMIN), máximo ponderada (WMAX) e uma mistura da função WMIN e WMAX (MIXMINMAX). De acordo com os autores, essas funções são suficientes para representar os tipos de relações necessárias para definir as TPN. A Figura \ref{modelo:funcoes:ponderadas} contém exemplos de TPN calculadas com essas funções. Entretanto, apesar de WMEAN e MIXMINMAX apresentarem os mesmos valores, há uma diferença entre elas. A função WMEAN calcula a média ponderada dos nós pai, baseado nos pesos de cada nó pai, e a função MIXMINMAX mescla as funções WMIN e WMAX, também baseado nos pesos dos nós pai.
+
+%\begin{figure}[ht!]
+%\begin{center}
+%		\fbox{\includegraphics[scale=0.57]{figs/funcoesExemplos.pdf}}
+%	\end{center}
+%	\caption{Exemplos das Funções Ponderadas.}
+%	\label{modelo:funcoes:ponderadas}
+%\end{figure}
+
+Para definir qual função deve ser utilizada, o indivíduo que está construindo o modelo deve definir perguntas para coletar respostas e definir as TPN. Tomando como base a \textit{Rede Bayesiana} representada na Figura \ref{modelo:funcoes:bn1}, um exemplo de pergunta seria: "Se o nó X1 for Muito Alto e o nó X2 for Muito Baixo, qual o valor esperado para o nó Y?". Baseado nas respostas, o indivíduo que está construindo a \textit{Rede Bayesiana} deve definir qual a função e quais o pesos para adequados para definir as TPN. A variância deve ser definida empiricamente e deve refletir a confiança dos especialistas nos resultados.
 
 \begin{figure}[ht!]
 \begin{center}
 		\fbox{\includegraphics[scale=0.8]{figs/BN-2nos.pdf}}
 	\end{center}
 	\caption{Exemplo de nó filho com dois pais.}
-	\label{funcoes:bn1}
+	\label{modelo:funcoes:bn1}
 \end{figure}
 
-Como forma de mitigar o problema da abordagem de Fenton et al. \cite{fenton}, em \cite{laitila} é proposta uma abordagem similar. Contudo, nessa abordagem, em vez do especialista avaliar a função de probabilidade de um determinado nó filho atribuindo a qual dos estados desse nó a tendência central corresponde, são atríbuidas probabilidades exatas para cada um dos estados do nó filho - a soma dessas probabilidades deve ser igual a 1. De acordo com os autores, essa abordagem provê uma transparência maior na elicitação dos pesos dos nós pai na função ponderada. Portanto, decidiu-se utilizar essa abordagem para definir as funções de probabilidade do modelo proposto.
+Entretanto, a base da abordagem proposta em \cite{fenton} consiste em mapear os estados dos nós em uma escala numérica. Logo, quanto menos precisa a tendência central do nó filho, mais vaga será a distribuição da função atribuida. Como forma de mitigar esses problemas, em \cite{laitila} é proposta uma abordagem similar. Contudo, nessa abordagem, em vez do especialista avaliar a função de probabilidade de um determinado nó filho atribuindo a qual dos estados desse nó a tendência central corresponde, são atríbuidas probabilidades para cada um dos estados do nó filho - a soma dessas probabilidades deve ser igual a 1. De acordo com os autores, essa abordagem provê uma transparência maior na elicitação dos pesos dos nós pai na função ponderada. Portanto, decidiu-se utilizar essa abordagem para definir as funções de probabilidade do modelo proposto.
 
-Um especialista em \textit{Redes Bayesianas} e Métodos Ágeis foi o responsável por realizar essa atividade. Para cada nó filho, o especialista deve definir quais as probabilidades desse nó estar em cada estado, com base nos estados dos nós pai. Portanto, para um nó com dois pais, e tomando como exemplo a \textit{Rede Bayesiana} apresentada na Figura \ref{funcoes:bn1}, o especialista precisou preencher as células em branco da Tabela \ref{funcoes:2nos} com os valores esperados, de forma que, para cada combinação possível
+Um especialista em \textit{Redes Bayesianas} e Métodos Ágeis foi o responsável por realizar essa atividade. Para cada nó filho, o especialista deve definir quais as probabilidades desse nó estar em cada estado, com base nos estados dos nós pai. Portanto, para um nó com dois pais, e tomando como exemplo a \textit{Rede Bayesiana} apresentada na Figura \ref{modelo:funcoes:bn1}, o especialista precisou preencher as células em branco da Tabela \ref{modelo:funcoes:tabela2nos} com os valores esperados, de forma que, para cada combinação possível
 
 \begin{align}
   \sum_{i=1}^{n}Pi = 1,\\ \intertext{onde $Pi$ é a probabilidade de cada estado e $n$ é a quantidade de estados possíveis do nó filho}
@@ -110,7 +133,7 @@ Um especialista em \textit{Redes Bayesianas} e Métodos Ágeis foi o responsáve
 \begin{table}[ht!]
 \centering
 \caption{Tabela para definição das Funções de Probabilidade de nós com dois pais}
-\label{funcoes:2nos}
+\label{modelo:funcoes:tabela2nos}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
 \multicolumn{2}{|l|}{}                      & \multicolumn{5}{c|}{\textbf{Valores Esperados para Y}}                                       \\ \hline
@@ -122,20 +145,20 @@ Um especialista em \textit{Redes Bayesianas} e Métodos Ágeis foi o responsáve
 \end{tabular}
 \end{table}
 
-De maneira análoga, para cada nó filho com três pais (e.g., Figura \ref{funcoes:bn2}), porém com uma maior quantidade de combinações possíveis, o especialista precisou preencher as células em branco de uma similar à Tabela \ref{funcoes:3nos}.
+De maneira análoga, para cada nó filho com três pais (e.g., Figura \ref{modelo:funcoes:bn2}), porém com uma maior quantidade de combinações possíveis, o especialista precisou preencher as células em branco de uma similar à Tabela \ref{modelo:funcoes:tabela3nos}.
 
 \begin{figure}[ht!]
 \begin{center}
 		\fbox{\includegraphics[scale=0.8]{figs/BN-3nos.pdf}}
 	\end{center}
 	\caption{Exemplo de nó filho com três pais.}
-	\label{funcoes:bn2}
+	\label{modelo:funcoes:bn2}
 \end{figure}
 
 \begin{table}[ht!]
 \centering
 \caption{Tabela para definição das Funções de Probabilidade de nós com três pais}
-\label{funcoes:3nos}
+\label{modelo:funcoes:tabela3nos}
 \resizebox{\textwidth}{!}{\begin{tabular}{|c|c|c|c|c|c|c|c|}
 \hline
 \multicolumn{3}{|c|}{}                                             & \multicolumn{5}{c|}{\textbf{Valores Esperados para Y}}                                       \\ \hline
@@ -149,12 +172,12 @@ De maneira análoga, para cada nó filho com três pais (e.g., Figura \ref{funco
 \end{tabular}}
 \end{table}
 
-Assim, de acordo com a quantidade de nós pai de um determinado nó, foram definidas tabelas para cada um dos nós presentes no modelo proposto, exceto os nós de entrada. Uma vez que essas tabelas foram definidas, o especialista, com a ajuda de uma ferramenta, calculou os resultados reais para cada estado. Esses cálculos foram feitos diversas vezes, pois há a necessidade de definir qual função ponderada representa a tabela de probabilidade do nó em questão, além dos pesos de cada um dos nós pai praquela função. Esses cálculos são realizados diversas vezes até que a função e os pesos adequados, que mais se aproximem dos valores esperados, sejam encontrados. Além disso, o processo de definição das funções de probabilidade por parte do especialista é muito importante, pois caso haja inconsistências na definição do GAD, é necessário reorgarnizar a estrutura do grafo para garantir a consistência entre os conceitos e relacionamentos que estão sendo representados. Finalmente, ao final desse processo, o modelo está pronto para ser utilizado. A Tabela \ref{funcoes:pesos} contém as funções e os pesos dos nós pai de todos os nós do modelo, exceto os nós de entrada.
+Assim, de acordo com a quantidade de nós pai de um determinado nó, foram definidas tabelas para cada um dos nós presentes no modelo proposto, exceto os nós de entrada. Uma vez que essas tabelas foram definidas, o especialista, com a ajuda de uma ferramenta, calculou os resultados reais para cada estado. Esses cálculos foram feitos diversas vezes, pois há a necessidade de definir qual função ponderada representa a tabela de probabilidade do nó em questão, além dos pesos de cada um dos nós pai praquela função. Esses cálculos são realizados diversas vezes até que a função e os pesos adequados, que mais se aproximem dos valores esperados, sejam encontrados. Além disso, o processo de definição das funções de probabilidade por parte do especialista é muito importante, pois caso haja inconsistências na definição do GAD, é necessário reorgarnizar a estrutura do grafo para garantir a consistência entre os conceitos e relacionamentos que estão sendo representados. Finalmente, ao final desse processo, o modelo está pronto para ser utilizado. A Tabela \ref{modelo:funcoes:tabelapesos} contém as funções e os pesos dos nós pai de todos os nós do modelo, exceto os nós de entrada.
 
 \begin{table}[ht!]
 \centering
 \caption{Definição das Funções de Probabilidade}
-\label{funcoes:pesos}
+\label{modelo:funcoes:tabelapesos}
 \resizebox{\textwidth}{!}{\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 \hline
 \multicolumn{3}{|c|}{\textbf{}}                                                                                                      & \multicolumn{3}{c|}{\textbf{Pais}}                                                                                                                                                                            & \multicolumn{3}{c|}{\textbf{Pesos}}                                      \\ \hline
