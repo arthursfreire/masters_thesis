@@ -3,14 +3,59 @@
 
 Como apresentado na Seção \ref{introducao:objetivos:especificos}, dois dos principais objetivos desta pesquisa são: Propor um modelo baseado em \textit{Redes Bayesianas} para avaliar o TE de equipes ágeis e uma abordagem para utilizar o modelo proposto. Portanto, para utilizar o modelo proposto no Capítulo \ref{modelo}, neste capítulo será descrita a abordagem proposta.
 
-Essa abordagem é dividida em etapas que englobam desde a coleta dos dados para alimentação do modelo, até o processo de tomada de decisões preventivas e corretivas por parte dos gerentes de projeto. Além disso, propõe-se que essa aborgadem deve ser utilizada antes da reunião de \textit{Retrospectiva da Iteração} para que, durante essa reunião, os gerentes de projeto possam reportar os resultados obtidos para a equipe, além de auxiliar na tomada de decisões para a próxima iteração. Portanto, neste capítulo, serão descritas todas as etapas dessa abordagem. A Figura \ref{} contém o fluxo completo da abordagem e as interações entre as etapas.
+Essa abordagem é dividida em quatro etapas que englobam. Propõe-se que essa aborgadem seja utilizada ao final das iterações e antes da reunião de \textit{Retrospectiva da Iteração}. Dessa forma, durante essa reunião, os gerentes de projeto possam reportar os resultados obtidos para a equipe. Além disso, eles podem utilizar esses resultados para auxiliá-los na tomada de decisões para o \textit{Planejamento da Iteração} que acontecerá em seguida. Portanto, neste capítulo, serão descritas todas as etapas dessa abordagem. A Figura \ref{descricao:etapas} contém o fluxo completo da abordagem e as interações entre as etapas.
 
-{\color{red} Figura ilustrando o método...}
+\begin{figure}[ht!]
+\begin{center}
+		\fbox{\includegraphics[scale=0.52]{figs/etapasAbordagem.pdf}}
+	\end{center}
+	\caption{Abordagem para utilização do modelo proposto.}
+	\label{descricao:etapas}
+\end{figure}
 
-A primeira etapa da abordagem diz respeito à coleta de dados e alimentação dos modelos. As perguntas necessárias para coletar os dados referentes aos nós de entrada do modelo estão estão definidas no Apêndice \ref{questionarios}. Com isso, caso uma empresa/organização deseje avaliar o TE de suas equipes, ou um gerente de projeto em particular deseje fazê-lo individualmente, basta responder as perguntas referentes aos nós de entrada para, assim, obter os resultados calculados pelo modelo.
+\subsubsection{Etapa I - Avaliação do Modelo}
+\label{descricao:avaliacao}
 
-A segunda etapa consiste da análise dos resultados calculados pelo modelo. Como o fator principal para o qual o modelo calcula os resultados, \textit{Trabalho em Equipe}, é subjetivo, há muita dificuldade para calcular esse fator de forma objetiva. Contudo, o TE é um fator que tem influência sobre outros fatores que podem ser medidos de forma objetiva (e.g., FATOR A, FATOR B, FATOR C) \cite{}. Portanto, para facilitar a análise dos dados, propõe-se que os indivíduos que utilizam esta abordagem adotem os resultados calculados pelo modelo como indicadores de uma determinada métrica que represente um desses fatores que são influenciados pelo TE. Dessa forma, em vez de analisar os resultados calculados comparando-os com resultados esperados pelos gerentes de projeto, a análise será menos sujeita a viés. Entretanto, é necessário atentar para o fato de que o TE, possivelmente, não é o único fator que influencia o fator com o qual ele está sendo comparado. Logo, para realizar a análise dos dados, talvez seja necessário fazer algumas presunções, que podem afetar a validade dessa análise.
+Esta é a etapa inicial da abordagem. Nesta etapa, o indivíduo que deseja utilizar a abordagem deve avaliar se a estrutura do modelo representa fielmente o contexto atual em que ele será aplicado. Por exemplo, se a equipe para a qual o modelo será utilizado não realiza \textit{Reuniões Diárias}, há a necessidade de remover esse nó do GAD. Por outro lado, caso o modelo não contemple algum fator que seja importante naquele contexto, talvez seja importante adicionar outro nó que represente esse fator ao GAD. Além disso, também podem haver irregularidades nas funções de probabilidade (i.e., a função para um determinado nó deveria ser diferente, ou os pesos de uma função não fazem sentido naquele contexto). Assim, caso julgue necessário, o indivíduo precisará modificar o GAD e/ou as funções de probabilidade para garantir a consistência do modelo em relação ao contexto em que ele está sendo aplicado. Entretanto, caso seja necessário muito esforço para modificar o modelo, talvez seja melhor construir um novo modelo desde o princípio.
 
-Baseado nos resultados calculados pelo modelo e pelas análises realizadas pelos gerentes de projeto, há a possibilidade de tomar medidas preventivas e corretivas para serem aplicadas nas iterações seguintes, garantindo, assim, a melhoria do TE e do produto e do processo como um todo.
+O resultado desta etapa deve ser um modelo consistente com o contexto atual do projeto. Portanto, ao final de cada iteração, que é o momento em que essa abordagem deve ser colocada em prática, esta etapa deve ser realizada. Essa periodicidade se deve porque podem haver mudanças no processo e na equipe que venham a contribuir para que o modelo não corresponda ao contexto atual do projeto.
 
-Propõe-se que os indivíduos que desejem utilizar essa abordagem realizem esses três passos do início ao final do projeto, sempre ao final das iterações, para avaliar o TE das equipes na iteração que se passou. Além disso, também há a possibilidade de utilização dessa abordagem pare realizar predições. Essa aplicação é útil para que os gerentes de projeto possam avaliar tomar decisões preventivas antes do começo de um determinado de projeto, baseando-se na equipe com a qual ele irá trabalhar. Dessa forma, é possível diminuir os riscos referentes às interações entre os integrantes da equipe. 
+\subsubsection{Etapa II - Alimentação do Modelo}
+\label{descricao:alimentacao}
+
+Nesta etapa, o indivíduo precisa alimentar os nós de entrada. Idealmente, seria possível alimentar todos os nós de entrada com evidências. Contudo, como o fator principal abordado neste trabalho e os fatores que o influenciam são subjetivos, a incerteza deve ser a mesma para todos os estados possíveis. Dessa forma, em vez de alimentar os nós de entrada do modelo com dados objetivos, os indivíduos que desejarem utilizar esta abordagem devem indicar, dentre os estados possíveis, um estado para cada um dos nós de entrada. Como forma de facilitar a realização desta etapa, facilitando a interpretação dos conceitos representados pelos nós de entrada, no Apêndice \ref{questionarios} estão definidas perguntas que correspondem aos nós de entrada do modelo.
+
+De acordo com a Seção \ref{modelo:gad}, todos os nós do modelo são \textit{Nós Ranqueados} com cinco estados - Muito Baixo, Baixo, Médio, Muito Alto e Alto. Assim, como as perguntas definidas no Apêndice \ref{questionarios} possuem cinco respostas possíveis, é possível mapeá-las para um estado possível de um determinado nó da seguinte maneira:
+
+\begin{itemize}
+  \item \textit{Falso}$\,\to\,$\textit{Muito Baixo}
+  \item \textit{Mais Falso que Verdadeiro}$\,\to\,$\textit{Baixo}
+  \item \textit{Nem Verdadeiro nem Falso}$\,\to\,$\textit{Médio}
+  \item \textit{Mais Verdadeiro que Falso}$\,\to\,$\textit{Alto}
+  \item \textit{Verdadeiro}$\,\to\,$\textit{Muito Alto}
+\end{itemize}
+
+Contudo, a pergunte referente ao nó \textit{Autonomia da Equipe} deve ser interpretada de maneira inversa, mas seguindo a mesma lógica:
+
+\begin{itemize}
+  \item \textit{Falso}$\,\to\,$\textit{Muito Alto}
+  \item \textit{Mais Falso que Verdadeiro}$\,\to\,$\textit{Alto}
+  \item \textit{Nem Verdadeiro nem Falso}$\,\to\,$\textit{Médio}
+  \item \textit{Mais Verdadeiro que Falso}$\,\to\,$\textit{Baixo}
+  \item \textit{Verdadeiro}$\,\to\,$\textit{Muito Baixo}
+\end{itemize}
+
+Após selecionar um estado para cada um dos nós de entrada, os resultados devem ser calculados utilizando uma ferramenta específica de \textit{Redes Bayesianas} (e.g., GeNIe\footnote{\url{http://genie.sis.pitt.edu/}}, Netica\footnote{\url{http://www.norsys.com/}} e AgenaRisk\footnote{\url{http://www.agenarisk.com/}}. Os resultados do modelo são dados com probabilidades para cada estado possível de todos os nós do modelo.
+
+\subsubsection{Etapa III - Análise dos Resultados}
+\label{descricao:analise}
+
+Após obter os resultados calculados pelo modelo, há a necessidade de analisá-los para detectar possíveis problemas que estão afetando a qualidade do TE. O objetivo desta etapa é avaliar a qualidade do TE na recém-acabada iteração e elaborar um plano de ações corretivas e preventivas para garantir a melhoria contínua do produto final e do processo. 
+
+Como o fator principal e os fatores que o influenciam são subjetivos, talvez haja dificuldade em avaliar os resultados. Contudo, a qualidade do TE influencia na eficiência da equipe. Esse fator, por sua vez, depende não apenas da qualidade do TE, mas também do \textit{Planejamento da Iteração}, da complexidade das estórias que precisam ser entregues, dentre outros. Portanto, para facilitar a análise dos dados, propõe-se que os indivíduos que utilizam esta abordagem adotem os resultados calculados pelo modelo como indicadores de uma determinada métrica que represente a eficiência da equipe. Dessa forma, em vez de analisar os resultados calculados comparando-os com resultados esperados pelos gerentes de projeto, a análise será menos sujeita a viés. Entretanto, é necessário atentar para o fato de que o TE não é o único fator que influencia a eficiência da equipe. Logo, para realizar a análise dos dados, talvez seja necessário fazer algumas presunções, que podem afetar a validade dessa análise.
+
+
+\subsubsection{Etapa IV - Ações Corretivas e Preventivas}
+\label{descricao:acoes}
+
+Baseado nos resultados calculados pelo modelo e pelas análises realizadas, um plano preventivo e corretivo é elaborado para garantir a melhoria contínua do produto final e do processo. Portanto, nesta etapa da abordagem essa plano é executado. Ao final da execução do plano, é necessário verificar o compromisso da equipe em relação às açoes que foram tomadas e quais as suas consequências. 
