@@ -87,32 +87,32 @@ Finalmente, após definir os nós do GAD e os relacionamentos entre eles, na Fig
 \section{Definição das Funções de Probabilidade}
 \label{modelo:funcoes}
 
-Apesar de \textit{Redes Bayesianas} serem um úteis para resolverem problemas reais relacionados com risco e subjetividade, o seu uso ainda é restrito devido a dificuldade em definir as TPN. Há duas maneiras de se coletar dados para definir as TPN de uma \textit{Rede Bayesiana}: base de dados ou opinião de especialistas. Contudo, não é fácil encontrar uma base de dados adequada para um cenário específico de um problema prático. Por outro lado, a definição das TPN com a ajuda de especialistas requer bastante esforço (e.g., definir TPN para nós com um número muito alto de estados ou alta quantidade de pais, pois a quantidade de linhas de uma TPN aumenta exponencialmente em função da quantidade de pais do nó em questão). De acordo com Fenton et al. \cite{fenton}, isso pode acarretar em vários tipos de inconsistências no modelo.
+Apesar de \textit{Redes Bayesianas} serem úteis para resolverem problemas reais relacionados com risco e subjetividade, o seu uso ainda é restrito devido a dificuldade em definir as TPN. Há duas maneiras de se coletar dados para definir as TPN de uma \textit{Rede Bayesiana}: base de dados ou opinião de especialistas. Contudo, não é fácil encontrar uma base de dados adequada para um cenário específico de um problema prático. Por outro lado, a definição das TPN com a ajuda de especialistas requer bastante esforço (e.g., definir TPN para nós com um número muito alto de estados ou alta quantidade de pais, pois a quantidade de linhas de uma TPN aumenta exponencialmente em função da quantidade de pais do nó em questão). De acordo com Fenton et al. \cite{fenton}, isso pode acarretar em vários tipos de inconsistências no modelo.
 
-Há vários métodos que têm como objetivo diminuir a complexidade e para codificar a experiência em grandes TPN. Noisy-OR \cite{huang} e Noisy-MAX \cite{diez} são dois métodos bem estabelicidos. Contudo, Noisy-OR só pode ser aplicado a nós booleanos, e Noisy-MAX não é capaz de modelar o intervalo de relacionamentos que precisamos neste trabalho. Das \cite{das} propôs um algoritmo para popular as TPN que visa diminuir o tempo de duração para adquirir conhecimento de especialistas. Perkusich et al. \cite{perkusichNPT}, por sua vez, propõem um algoritmo cujo objetivo é ordenar os nós pai dadas as suas magnitudes relativas para o nó filho. Em seguida, com os nós filho ordenados, deve-se gerar as funções ponderadas com base na relevância dos nós pais e, finalmente, aplicá-las como funções de probabilidade dos nós.
+Há vários métodos que têm como objetivo diminuir a complexidade e codificar a experiência de especialistas em grandes TPN. Noisy-OR \cite{huang} e Noisy-MAX \cite{diez} são dois desses métodos e possuem credibilidade. Contudo, Noisy-OR só pode ser aplicado a nós booleanos, e Noisy-MAX não é capaz de modelar o intervalo de relacionamentos que precisamos neste trabalho. Das \cite{das} propôs um algoritmo para popular as TPN que visa diminuir o tempo de duração para adquirir conhecimento de especialistas. Perkusich et al. \cite{perkusichNPT}, por sua vez, propõem um algoritmo cujo objetivo é ordenar os nós pai dadas as suas magnitudes relativas para o nó filho. Em seguida, com os nós pai ordenados por ordem de relevância, deve-se gerar as funções ponderadas com base na relevância dos nós pais e, finalmente, aplicá-las como funções de probabilidade dos nós.
 
-Por outro lado, Fenton et al. \cite{fenton} propõem uma abordagem para \textit{Redes Bayesianas} que faz utiliza \textit{Nós Ranqueados}. Essa abordagem é baseada numa distribuição normal duplamente truncada (TNormal) que usa como média um tipo de função ponderada em função dos valores dos nós pai. Essa distribuição é baseada em quatro parâmetros: $u$, média (i.e., tendência central); $\sigma^{2}$, variância (i.e., confiança dos resultados); $a$, limite inferior (i.e., 0); e $b$, limite superior (i.e., 1). Essa distribuição permite que quem a utilize modele uma varidade de formas (i.e., relacionamentos. Por exemplo: uma distribuição uniforme ($\sigma^{2} = \infty$) e distribuições muito enviesadas ($\sigma^{2} = 0$). Na Figura \ref{modelo:funcoes:tnormal} há alguns exemplos de funções TNormal.
+Por outro lado, Fenton et al. \cite{fenton} propõem uma abordagem para \textit{Redes Bayesianas} que utiliza \textit{Nós Ranqueados}. Essa abordagem é baseada numa distribuição normal duplamente truncada (TNormal) que usa como média um tipo de função ponderada em função dos valores dos nós pai. Essa distribuição é baseada em quatro parâmetros: $u$, média (i.e., tendência central); $\sigma^{2}$, variância (i.e., confiança dos resultados); $a$, limite inferior (i.e., 0); e $b$, limite superior (i.e., 1). Essa distribuição permite que quem a utilize modele uma varidade de formas (i.e., relacionamentos). Por exemplo: uma distribuição uniforme ($\sigma^{2} = \infty$) e distribuições muito enviesadas ($\sigma^{2} = 0$). Na Figura \ref{modelo:funcoes:tnormal} há alguns exemplos de funções TNormal.
 
 
-%\begin{figure}[ht!]
-%\begin{center}
-%		\fbox{\includegraphics[scale=0.57]{figs/tnormalExemplos.pdf}}
-%	\end{center}
-%	\caption{Exemplos de Funções TNormal.}
-%	\label{modelo:funcoes:tnormal}
-%\end{figure}
+\begin{figure}[ht!]
+\begin{center}
+		\fbox{\includegraphics[scale=1]{figs/tnormalExemplos.pdf}}
+	\end{center}
+	\caption{Exemplos de Funções TNormal.}
+	\label{modelo:funcoes:tnormal}
+\end{figure}
 
-Nessa abordagem, $u$ é definido por uma função ponderada baseada nos nós pai. Existem quatro tipos de funções ponderadas: média ponderada (WMEAN), mínimo ponderada (WMIN), máximo ponderada (WMAX) e uma mistura da função WMIN e WMAX (MIXMINMAX). De acordo com os autores, essas funções são suficientes para representar os tipos de relações necessárias para definir as TPN. A Figura \ref{modelo:funcoes:ponderadas} contém exemplos de TPN calculadas com essas funções. Entretanto, apesar de WMEAN e MIXMINMAX apresentarem os mesmos valores, há uma diferença entre elas. A função WMEAN calcula a média ponderada dos nós pai, baseado nos pesos de cada nó pai, e a função MIXMINMAX mescla as funções WMIN e WMAX, também baseado nos pesos dos nós pai.
+Nessa abordagem, $u$ é definido por uma função ponderada baseada nos nós pai. Existem quatro tipos de funções ponderadas: média ponderada (WMEAN), mínimo ponderada (WMIN), máximo ponderada (WMAX) e uma última função que mescla a WMIN e a WMAX (MIXMINMAX). De acordo com os autores, essas funções são suficientes para representar os tipos de relações necessárias para definir as TPN. A Figura \ref{modelo:funcoes:ponderadas} contém exemplos de TPN calculadas com essas funções. Entretanto, apesar de WMEAN e MIXMINMAX apresentarem os mesmos valores, há uma diferença entre elas. A função WMEAN calcula a média ponderada dos nós pai, baseado nos pesos de cada nó pai, e a função MIXMINMAX mescla as funções WMIN e WMAX, também baseado nos pesos dos nós pai.
 
-%\begin{figure}[ht!]
-%\begin{center}
-%		\fbox{\includegraphics[scale=0.57]{figs/funcoesExemplos.pdf}}
-%	\end{center}
-%	\caption{Exemplos das Funções Ponderadas.}
-%	\label{modelo:funcoes:ponderadas}
-%\end{figure}
+\begin{figure}[ht!]
+\begin{center}
+		\fbox{\includegraphics[scale=0.47]{figs/funcoesExemplos.pdf}}
+	\end{center}
+	\caption{Exemplos das Funções Ponderadas.}
+	\label{modelo:funcoes:ponderadas}
+\end{figure}
 
-Para definir qual função deve ser utilizada, o indivíduo que está construindo o modelo deve definir perguntas para coletar respostas e definir as TPN. Tomando como base a \textit{Rede Bayesiana} representada na Figura \ref{modelo:funcoes:bn1}, um exemplo de pergunta seria: "Se o nó X1 for Muito Alto e o nó X2 for Muito Baixo, qual o valor esperado para o nó Y?". Baseado nas respostas, o indivíduo que está construindo a \textit{Rede Bayesiana} deve definir qual a função e quais o pesos para adequados para definir as TPN. A variância deve ser definida empiricamente e deve refletir a confiança dos especialistas nos resultados.
+Para definir qual função deve ser utilizada, o indivíduo que está construindo o modelo deve definir perguntas para coletar respostas e definir as TPN. Tomando como base a \textit{Rede Bayesiana} representada na Figura \ref{modelo:funcoes:bn1}, um exemplo de pergunta seria: "Se o nó X1 for Muito Alto e o nó X2 for Muito Baixo, qual o valor esperado para o nó Y?". Baseado nas respostas, o indivíduo que está construindo a \textit{Rede Bayesiana} deve definir qual a função e quais os pesos adequados para definir as TPN. A variância deve ser definida empiricamente e deve refletir a confiança dos especialistas nos resultados.
 
 \begin{figure}[ht!]
 \begin{center}
