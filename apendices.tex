@@ -1,9 +1,35 @@
 \chapter{Questionários para Alimentação do Modelo}
 \label{questionarios}
 
+Neste Apêndice estão as perguntas elaboradas para facilitar o processo de alimentação do modelo proposto. Cada pergunta possui cinco respostas possíveis, e apenas uma delas pode ser utilizada para responder as perguntas.
+
+A Tabela \ref{questionarios:comunicacao} corresponde às perguntas definidas para os nós de entrada \textit{Distribuição da Equipe} e Meio de \textit{Comunicação}, que influenciam a \textit{Comunicação} da equipe. Na Tabela \ref{questionario:reunioes} estão as perguntas definidas referentes aos nós de entrada \textit{Monitoramento} e \textit{Presença de Todos os Membros}, que influenciam a qualidade das \textit{Reuniões Diárias}. A Tabela \ref{questionarios:orientacao}, por sua vez, corresponde às perguntas relacionadas aos nós de entrada \textit{Atributos Pessoais} e \textit{Expertise}, que influenciam a qualidade da \textit{Orientação da Equipe}. Apesar do nó \textit{Auto-Gerenciamento} depender dos valores dos nós \textit{Expertise}, \textit{Liderança Compartilhada} e \textit{Aprendizagem da Equipe}, a Tabela \ref{questionarios:autogerenciamento} só contém as perguntas referentes a esses dois últimos, pois a pergunta para o nó \textit{Expertise} foi definida na Tabela \ref{questionarios:orientacao}. Finalmente, na Tabela \ref{questionarios:autonomia}, está definida a pergunta referente ao nó de entrada \textit{Autonomia da Equipe}, que influencia diretamente na qualidade do \textit{Trabalho em Equipe}.
+
+De acordo com a Seção \ref{modelo:gad}, todos os nós do modelo são \textit{Nós Ranqueados} com cinco estados (i.e., Muito Baixo, Baixo, Médio, Alto e Muito Alto). Assim, como as perguntas definidas neste Apêndice possuem cinco respostas possíveis, é possível mapeá-las para um estado possível de um determinado nó da seguinte maneira:
+
+\begin{itemize}
+  \item \textit{Falso}$\,\to\,$\textit{Muito Baixo}
+  \item \textit{Mais Falso que Verdadeiro}$\,\to\,$\textit{Baixo}
+  \item \textit{Nem Verdadeiro nem Falso}$\,\to\,$\textit{Médio}
+  \item \textit{Mais Verdadeiro que Falso}$\,\to\,$\textit{Alto}
+  \item \textit{Verdadeiro}$\,\to\,$\textit{Muito Alto}
+\end{itemize}
+
+Contudo, a pergunte referente ao nó \textit{Autonomia da Equipe} deve ser interpretada de maneira inversa, mas seguindo a mesma lógica:
+
+\begin{itemize}
+  \item \textit{Falso}$\,\to\,$\textit{Muito Alto}
+  \item \textit{Mais Falso que Verdadeiro}$\,\to\,$\textit{Alto}
+  \item \textit{Nem Verdadeiro nem Falso}$\,\to\,$\textit{Médio}
+  \item \textit{Mais Verdadeiro que Falso}$\,\to\,$\textit{Baixo}
+  \item \textit{Verdadeiro}$\,\to\,$\textit{Muito Baixo}
+\end{itemize}
+
+
+
 \begin{table}[ht!]
 \centering
-\caption{Perguntas referentes à qualidade da Comunicação da equipe}
+\caption{Perguntas referentes à qualidade da Comunicação da equipe.}
 \label{questionarios:comunicacao}
 \resizebox{\textwidth}{!}{\begin{tabular}{|c|c|l|}
 \hline
@@ -18,7 +44,7 @@
 
 \begin{table}[ht!]
 \centering
-\caption{Perguntas referentes à qualidade das Reuniões Diárias da equipe}
+\caption{Perguntas referentes à qualidade das Reuniões Diárias da equipe.}
 \label{questionario:reunioes}
 \resizebox{\textwidth}{!}{\begin{tabular}{|c|c|l|}
 \hline
@@ -33,7 +59,7 @@
 
 \begin{table}[ht!]
 \centering
-\caption{Perguntas referentes à qualidade da Orientação da equipe}
+\caption{Perguntas referentes à qualidade da Orientação da equipe.}
 \label{questionarios:orientacao}
 \resizebox{\textwidth}{!}{\begin{tabular}{|c|c|l|}
 \hline
@@ -41,6 +67,34 @@
 \textbf{ID} & \textbf{Nó Correspondente} & \multicolumn{1}{c|}{\textbf{Pergunta}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     \\ \hline
 5           & Atributos Pessoais         & \begin{tabular}[c]{@{}l@{}}\textbf{Os membros da equipe se dão bem entre si?}\\ \\ Verdadeiro - A mistura de personalidades dos membros da equipe contribui para que eles se dêem bem entre si\\ Falso - A mistura de personalidades dos membros da equipe não contribui para que eles se dêem bem entre si.\\ \\ Opção 1: Falso\\ Opção 2: Mais Falso que Verdadeiro\\ Opção 3: Nem Verdadeiro nem Falso\\ Opção 4: Mais Verdadeiro que Falso\\ Opção 5: Verdadeiro\end{tabular}                                                                                                                                                                                   \\ \hline
 6           & Expertise                  & \begin{tabular}[c]{@{}l@{}}\textbf{Os membros da equipe possuem todo o conhecimento necessário para o desenvolvimento das estórias} \\ \textbf{da sprint com interseção?}\\ \\ Verdadeiro - Os membros da equipe possuem todo o conhecimento necessário para o desenvolvimento das estórias \\ da sprint com capacidade de substituir uns aos outros na realização das tarefas.\\ Falso - Os membros da equipe não possuem todo o conhecimento necessário para o desenvolvimento da estórias da sprint.\\ \\ Opção 1: Falso\\ Opção 2: Mais Falso que Verdadeiro\\ Opção 3: Nem Verdadeiro nem Falso\\ Opção 4: Mais Verdadeiro que Falso\\ Opção 5: Verdadeiro\end{tabular} \\ \hline
+\end{tabular}}
+\end{table}
+
+
+
+\begin{table}[ht!]
+\centering
+\caption{Perguntas referentes à capacidade de Auto-Gerenciamento da equipe.}
+\label{questionarios:autogerenciamento}
+\resizebox{\textwidth}{!}{\begin{tabular}{|c|c|l|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Auto-Gerenciamento}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
+\textbf{ID} & \textbf{Nó Correspondente} & \multicolumn{1}{c|}{\textbf{Pergunta}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
+7           & Liderança Compartilhada    & \begin{tabular}[c]{@{}l@{}}\textbf{A autoridade na tomada de decisões e na liderança é compartilhada entre os membros da equipe?}\\ \\ Verdadeiro - A autoridade na tomada de decisões e na liderança é compartilhada entre os membros da equipe.\\ Falso - A autoridade na tomada de decisões e na liderança não é compartilhada entre os membros da equipe.\\ \\ Opção 1: Falso\\ Opção 2: Mais Falso que Verdadeiro\\ Opção 3: Nem Verdadeiro nem Falso\\ Opção 4: Mais Verdadeiro que Falso\\ Opção 5: Verdadeiro\end{tabular} \\ \hline
+8           & Aprendizagem da Equipe     & \begin{tabular}[c]{@{}l@{}}\textbf{A equipe se adapta facilmente às mudanças que ocorrem durante o projeto?}\\ \\ Verdadeiro - A equipe se adapta facilmente às mudanças que ocorrem durante o projeto.\\ Falso - A equipe não tem capacidade de se adaptar às mudanças que ocorrem durante o projeto.\\ \\ Opção 1: Falso\\ Opção 2: Mais Falso que Verdadeiro\\ Opção 3: Nem Verdadeiro nem Falso\\ Opção 4: Mais Verdadeiro que Falso\\ Opção 5: Verdadeiro\end{tabular}                                                        \\ \hline
+\end{tabular}}
+\end{table}
+
+
+
+\begin{table}[ht!]
+\centering
+\caption{Pergunta referente à Autonomia da equipe.}
+\label{questionarios:autonomia}
+\resizebox{\textwidth}{!}{\begin{tabular}{|c|c|l|}
+\hline
+\textbf{ID} & \textbf{Nó Correspondente} & \multicolumn{1}{c|}{\textbf{Pergunta}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            \\ \hline
+9           & Autonomia da Equipe        & \begin{tabular}[c]{@{}l@{}}\textbf{Há um agente externo interferindo em como a equipe executa suas tarefas?}\\ \\ Verdadeiro - Há um agente externo que sempre interfere em como a equipe deve executar suas atividades.\\ Falso - Não há um agente externo interferindo em como a equipe executa suas tarefas. \\ O agente externo colabora com a equipe para definir o que será executado e apenas quando adequado.\\ \\ Opção 1: Falso\\ Opção 2: Mais Falso que Verdadeiro\\ Opção 3: Nem Verdadeiro nem Falso\\ Opção 4: Mais Verdadeiro que Falso\\ Opção 5: Verdadeiro\end{tabular} \\ \hline
 \end{tabular}}
 \end{table}
 

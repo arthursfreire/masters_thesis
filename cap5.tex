@@ -23,29 +23,9 @@ O resultado desta etapa deve ser um modelo consistente com o contexto atual do p
 \subsubsection{Etapa II - Alimentação do Modelo}
 \label{descricao:alimentacao}
 
-Nesta etapa, o indivíduo precisa alimentar os nós de entrada. Idealmente, seria possível alimentar todos os nós de entrada com evidências. Contudo, como o fator principal abordado neste trabalho e os fatores que o influenciam são subjetivos, a incerteza deve ser a mesma para todos os estados possíveis. Dessa forma, em vez de alimentar os nós de entrada do modelo com dados objetivos, os indivíduos que desejarem utilizar esta abordagem devem indicar, dentre os estados possíveis, um estado para cada um dos nós de entrada. Como forma de facilitar a realização desta etapa, facilitando a interpretação dos conceitos representados pelos nós de entrada, no Apêndice \ref{questionarios} estão definidas perguntas que correspondem aos nós de entrada do modelo.
+Nesta etapa, o indivíduo precisa alimentar os nós de entrada. Idealmente, seria possível alimentar todos os nós de entrada com evidências. Contudo, como o fator principal abordado neste trabalho e os fatores que o influenciam são subjetivos, a incerteza deve ser a mesma para todos os estados possíveis. Dessa forma, em vez de alimentar os nós de entrada do modelo com dados objetivos, os indivíduos que desejarem utilizar esta abordagem devem indicar, dentre os estados possíveis, um estado para cada um dos nós de entrada. Como forma de facilitar a realização desta etapa, no Apêndice \ref{questionarios} estão definidas perguntas que correspondem aos nós de entrada do modelo. O mapeamento das respostas dessas perguntas para os possíveis estados dos nós entrada também é descrito nesse Apêndice.
 
-De acordo com a Seção \ref{modelo:gad}, todos os nós do modelo são \textit{Nós Ranqueados} com cinco estados - Muito Baixo, Baixo, Médio, Alto e Muito Alto. Assim, como as perguntas definidas no Apêndice \ref{questionarios} possuem cinco respostas possíveis, é possível mapeá-las para um estado possível de um determinado nó da seguinte maneira:
-
-\begin{itemize}
-  \item \textit{Falso}$\,\to\,$\textit{Muito Baixo}
-  \item \textit{Mais Falso que Verdadeiro}$\,\to\,$\textit{Baixo}
-  \item \textit{Nem Verdadeiro nem Falso}$\,\to\,$\textit{Médio}
-  \item \textit{Mais Verdadeiro que Falso}$\,\to\,$\textit{Alto}
-  \item \textit{Verdadeiro}$\,\to\,$\textit{Muito Alto}
-\end{itemize}
-
-Contudo, a pergunte referente ao nó \textit{Autonomia da Equipe} deve ser interpretada de maneira inversa, mas seguindo a mesma lógica:
-
-\begin{itemize}
-  \item \textit{Falso}$\,\to\,$\textit{Muito Alto}
-  \item \textit{Mais Falso que Verdadeiro}$\,\to\,$\textit{Alto}
-  \item \textit{Nem Verdadeiro nem Falso}$\,\to\,$\textit{Médio}
-  \item \textit{Mais Verdadeiro que Falso}$\,\to\,$\textit{Baixo}
-  \item \textit{Verdadeiro}$\,\to\,$\textit{Muito Baixo}
-\end{itemize}
-
-Após selecionar um estado para cada um dos nós de entrada, os resultados devem ser calculados utilizando uma ferramenta específica de \textit{Redes Bayesianas} (e.g., GeNIe\footnote{\url{http://genie.sis.pitt.edu/}}, Netica\footnote{\url{http://www.norsys.com/}} e AgenaRisk\footnote{\url{http://www.agenarisk.com/}}). Os resultados do modelo são dados com probabilidades para cada estado possível de todos os nós do modelo.
+Após responder as perguntas e, em seguida, selecionar um estado para cada um dos nós de entrada, os resultados devem ser calculados utilizando uma ferramenta específica de \textit{Redes Bayesianas} (e.g., GeNIe\footnote{\url{http://genie.sis.pitt.edu/}}, Netica\footnote{\url{http://www.norsys.com/}} e AgenaRisk\footnote{\url{http://www.agenarisk.com/}}). Os resultados do modelo são dados com probabilidades para cada estado possível de todos os nós do modelo.
 
 \subsubsection{Etapa III - Análise dos Resultados}
 \label{descricao:analise}
@@ -58,4 +38,4 @@ Como o fator principal e os fatores que o influenciam são subjetivos, talvez ha
 \subsubsection{Etapa IV - Ações Corretivas e Preventivas}
 \label{descricao:acoes}
 
-Baseado nos resultados calculados pelo modelo e pelas análises realizadas, um plano preventivo e corretivo é elaborado para garantir a melhoria contínua do produto final e do processo, além do TE. Portanto, nesta etapa da abordagem esse plano é executado. Ao final da execução do plano, é necessário verificar o compromisso da equipe em relação às açoes que foram tomadas e quais as suas consequências dessas ações. 
+Baseado nos resultados calculados pelo modelo e pelas análises realizadas, um plano preventivo e corretivo é elaborado para garantir a melhoria contínua do produto final e do processo, além do TE. Portanto, nesta etapa da abordagem esse plano é executado. Ao final da execução do plano, é necessário verificar o compromisso da equipe em relação às açoes que foram tomadas e quais as suas consequências dessas ações.
