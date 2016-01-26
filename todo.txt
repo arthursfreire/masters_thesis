@@ -1,0 +1,18 @@
+Introdução
+    - Especificar o contexto do modelo
+    - Especificar que é pra ser utilizado ao final das Sprints, para avaliar a qualidade do TE de uma sprint passada
+    - Definir Trabalho em Equipe (Email estudo de caso)
+
+Apresentação do Modelo
+    - Contexto do modelo
+    - Citar trabalhos eficiência equipe
+    - Citar complexidade alta > 3 nós
+    - Atentar para os fatores descritos na Fundamentação Teórica
+
+    - Limpar Células tabelas exemplo
+    - Consertar equação
+    - Adicionar uma tabela exemplo de calibração
+    - Modificar tabela final de calibração
+
+Descrição da Abordagem
+    - Explicar melhor etapa III
