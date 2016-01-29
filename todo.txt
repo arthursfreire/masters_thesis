@@ -19,3 +19,7 @@ Apresentação do Modelo
 
 Descrição da Abordagem
     - Explicar melhor etapa III
+	
+Estudo de Caso
+	- Ajeitar descrição das Unidades de Análise
+	- Ler tudo e ajustar
