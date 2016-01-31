@@ -5,21 +5,27 @@ Introdução
 
 Fundamentação Teórica
     - Tabela com fatores-chave
+        - Referências Incompletas
 
 Apresentação do Modelo
+    - Reescrever
     - Contexto do modelo
     - Citar trabalhos eficiência equipe
-    - Citar complexidade alta > 3 nós
     - Atentar para os fatores descritos na Fundamentação Teórica
 
-    - Limpar Células tabelas exemplo
-    - Consertar equação
     - Adicionar uma tabela exemplo de calibração
-    - Modificar tabela final de calibração
 
 Descrição da Abordagem
     - Explicar melhor etapa III
-	
+
 Estudo de Caso
-	- Ajeitar descrição das Unidades de Análise
+    - Ameaças à Validade
+        * Citação vazia
 	- Ler tudo e ajustar
+
+Apêndice A
+    - Faltando as métricas
+
+Geral
+    - Remover Itálico de RBs
+        - Adicionar na tabela de símbolos? Sim
