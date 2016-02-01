@@ -1,13 +1,13 @@
 \chapter{Introdução}
 \label{introducao}
 
-De acordo com Emam et al. \cite{emam}, a porcentagem de projetos de TI que sucedem varia entre 46 e 55 porcento. Além disso, o sucesso de projetos de TI depende de cinco fatores: satisfação do cliente, orçamento, cronograma, qualidade do produto e produtividade da equipe. De acordo com os autores, para uma disciplina aplicada, esses números representam um alto índice de falhas.
+De acordo com Emam et al. \cite{emam}, a porcentagem de projetos de Tecnologia da Informação (TI) que sucedem varia entre 46 e 55 porcento. Conforme descrito nesse trabalho, o sucesso de projetos dessa natureza depende de cinco fatores: satisfação do cliente, orçamento, cronograma, qualidade do produto e produtividade da equipe. De acordo com os autores, para uma disciplina aplicada, esses números representam um alto índice de falhas.
 
 Boehm et al. \cite{boehm} identificaram seis principais razões de falha em projetos de desenvolvimento de \textit{software}: requisitos imcompletos, ausência de envolvimento do cliente, falta de recursos, expectativas irrealistas, ausência de suporte executivo e mudança de requisitos e especificações. A ocorrência da maioria desses fatores se dá por conta de problemas na comunicação e interação entre desenvolvedores e \textit{stakeholders}. Uma das principais razões pelas quais as metodologias ágeis têm se tornado popular no contexto do desenvolvimento de \textit{software}, é a necessidade de focar na melhoria da colaboração entre desenvolvedores e \textit{stakeholders}, além de melhorar a velocidade de resposta com relação à mudança de requisitos.
 
 No Manifesto Ágil \cite{manifesto}, é dito que projetos que utilizam métodos ágeis devem focar nos indivíduos e nas relações entre eles em vez de focar em processos e ferramentas. Além disso, como é esperado que as equipes ágeis sejam auto-organizáveis, é necessário que os membros da equipe colaborem entre si, e adotem os conceitos de responsabilidade e compromisso com as atividades da equipe. De acordo com Bustamante et al. \cite{bustamante}, numa equipe ágil ideal, os membros da equipe compartilham o mesmo ambiente de trabalho e comunicam-se cara-a-cara diariamente. Lalsing et al. \cite{lalsing} afirmam que o gerente de projeto deve definir as relações entre os papéis para garantir a efetividade na coordenação da equipe e o controle do projeto. Nesse último trabalho, os autores também afirmam que indivíduos com diferentes personalidades, geralmente, devem trabalhar juntos para garantir uma equipe coesa.
 
-A utilização de metodologias ágeis requer a adoção de uma série de práticas que aumentam as chances de sucesso do projeto, pois a adoção dessas práticas é capaz de resolver a maioria dos problemas responsáveis por falhas em projetos de \textit{software} \cite{boehm}. Assim, uma vez que a saída de um processo de \textit{software} é o próprio \textit{software}, a qualidade do produto final é dependente de uma série de artefatos e fatores que compõem esse processo.
+A utilização de metodologias ágeis requer a adoção de uma série de práticas que aumentam as chances de sucesso do projeto. Isso se dá porque a adoção dessas práticas busca mitigar problemas relacionados à colaboração entre desenvolvedores e \textit{stakeholders}, e mudança de requisitos, que são as principais razões para ocorrência dos problemas descritos em \cite{boehm}. Assim, uma vez que a saída de um processo de \textit{software} é o próprio \textit{software}, a qualidade do produto final é dependente de uma série de práticas, artefatos e fatores que compõem esse processo.
 
 Chow et al. \cite{chow} identificaram os três principais fatores que influenciam o sucesso de projetos de desenvolvimento de \textit{software} que utilizam métodos ágeis: estratégia de entrega, técnicas de engenharia de \textit{software} no contexto ágil e a capacidade do time. Esse último, de acordo com os autores, está relacionado com o ato de construir projetos em volta de indivíduos motivados. Tendo em vista que as equipes são consideradas os recursos mais valiosos de projetos que utilizam métodologias ágeis, e sua capacidade, como citado anteriormente, é um dos principais fatores que influenciam o sucesso desses projetos, faz-se necessário atentar para os aspectos que influenciam a eficiência dessas equipes.
 
@@ -16,14 +16,16 @@ Em algumas pesquisas sobre equipes de desenvolvimento de \textit{software}, foi 
 \section{Problemática}
 \label{introducao:problematica}
 
-Conforme apresentado anteriormente, é importante avaliar e garantir a melhoria contínua do TE. Portanto, a adoção de um método que proporcione essas oportunidades aos gerentes é de importante valor para o produto. Entretanto, conforme descrito na Seção \ref{fundamentacao:ageis:fatores}, há diversos fatores que podem vir a influenciar o TE. Além disso, os fatores que influenciam o TE, são, em sua grande maioria, subjetivos. Dessa forma, o método utilizado para avaliar o TE precisa minimizar o viés e a incerteza que pode ser introduzido por conta da subjetividade desses fatores, garantindo que os resultados sejam fiéis ao cenário no qual a avaliação será realizada.
+Conforme apresentado anteriormente, é importante avaliar e garantir a melhoria contínua do TE. Portanto, a adoção de um método que proporcione essas oportunidades aos gerentes de projeto contribui positivamente na qualidade do produto desenvolvido. Contudo, mesmo com a popularização das metodologias ágeis no contexto de desenvolvimento de \textit{software}, a quantidade de projetos dessa natureza que sucedem ainda é baixa.
+
+Na Seção \ref{fundamentacao:ageis:fatores}, são apresentados diversos fatores que podem vir a influenciar a qualidade do TE. Além disso, os fatores que influenciam o TE, são, em sua grande maioria, subjetivos. Dessa forma, o método utilizado para avaliar o TE precisa minimizar o viés e a incerteza oriundos da subjetividade desses fatores, garantindo que os resultados sejam fiéis ao cenário no qual a avaliação será realizada.
 
 \section{Objetivos}
 \label{introducao:objetivos}
 
-Considerando o que foi abordado na anteriormente, o principal objetivo deste trabalho é mitigar os problemas descritos, principalmente na Seção \ref{introducao:problematica}, propondo um modelo para avaliar o TE de equipes ágeis, além de uma abordagem para utilizar esse modelo. A utilização desse abordagem deve auxiliar na identificação de oportunidades de melhorias do TE de equipes ágeis.
+Considerando o que foi abordado na Seção anterior, o principal objetivo deste trabalho é proporcionar uma maneira de avaliar a qualidade do TE de equipes ágeis, utilizando um modelo baseado em Redes Bayesianas (RB), além de uma abordagem para utilizar esse modelo. A utilização desse modelo e dessa abordagem deve auxiliar na identificação de oportunidades de melhorias do TE dessas equipes, e o custo-benefício de sua utilização deve ser positivo para agregar valor aos projetos. O conceito de \textit{Trabalho em Equipe}, neste trabalho, é definido como: \textit{a capacidade dos membros da equipe trabalharem de maneira síncrona e coesa, mantendo os objetivos da equipe como prioridade, sem a interferência de um agente externo (e.g., cliente) nas atividades realizadas}.
 
-Como forma de representar o TE em função do relacionamento dos fatores que a influenciam, optou-se pelo uso de \textit{Redes Bayesianas}, uma vez que modelos probabilísticos dessa família são adequados para se modelar incerteza em um determinado domínio \cite{bengal}. Essa decisão foi tomada com o objetivo de diminuir a incerteza em relação à confiança nos resultados finais do modelo, tendo em vista que, como citado na Seção \ref{introducao:problematica}, a maioria dos fatores que influenciam o TE são subjetivos.
+Optou-se pelo uso de RB neste trabalho porque modelos probabilísticos dessa família são adequados para modelar incerteza em um determinado domínio \cite{bengal}. Essa decisão foi tomada com o objetivo de diminuir a incerteza em relação à confiança nos resultados finais do modelo, tendo em vista que, como citado na Seção \ref{introducao:problematica}, a maioria dos fatores que influenciam o TE são subjetivos.
 
 \subsection{Objetivos Específicos}
 \label{introducao:objetivos:especificos}
@@ -31,38 +33,38 @@ Como forma de representar o TE em função do relacionamento dos fatores que a i
 Para simplificar os objetivos descritos na Seção \ref{introducao:objetivos}, podemos especificá-los da seguinte maneira:
 
 \begin{enumerate}
-  \item Propor um modelo baseado em \textit{Redes Bayesianas} para avaliar o TE de equipes ágeis;
-  \item Propor uma abordagem para utilizar o modelo proposto.
-  \item Proporcionar aos gerentes de projeto uma abordagem menos sensível à subjetividade na avaliação do TE, que auxilie na identificação de oportunidades de melhorias do trabalho em equipe;
+  \item Propor um modelo baseado em RB para avaliar o TE de equipes ágeis;
+  \item Propor uma abordagem para utilizar o modelo proposto;
+  \item Proporcionar aos gerentes de projeto uma abordagem menos sensível à subjetividade na avaliação do TE, que auxilie na identificação de oportunidades de melhorias desse fator;
   \item Aplicar a abordagem em projetos reais de desenvolvimento de \textit{software} para avaliar sua utilidade e seu custo-benefício.
 \end{enumerate}
 
 \section{Contribuições e Resultados}
 \label{introducao:resultados}
 
-O modelo proposto neste trabalho foi construído com base numa densa revisão literária com foco na identificação dos fatores-chave que influenciam o TE. Em posse desse modelo, é possível avaliar, de forma menos subjetiva, a qualidade do TE de equipes ágeis.
+O modelo proposto neste trabalho foi construído com base numa revisão literária com foco na identificação dos fatores-chave que influenciam a qualidade do TE. Em posse desse modelo, é possível avaliar, de forma menos subjetiva, a qualidade do TE de equipes ágeis.
 
 Entretanto, a utilização desse modelo pode ser complexa para alguns indivíduos. Com isso, neste trabalho, também é proposta uma abordagem que auxilia na utilização desse modelo. Essa abordagem é dividida em etapas que englobam desde a coleta de dados para alimentação do modelo, até o processo de tomada de decisões corretivas e preventivas por parte dos gerentes de projeto.
 
-A abordagem e o modelo propostos nesta pesquisa foram validados com sucesso por meio de um estudo de caso em que as unidades de análise foram três projetos de desenvolvimento de \textit{software}. De acordo com os sujeitos (i.e., \textit{Scrum Masters}), o modelo auxilia no detecção de oportunidades de melhoria do TE e, consequentemente, no processo de tomada de decisões. Além disso, apesar do esforço necessário para entender o modelo e o procedimento da abordagem, além do esforço para alimentar os nós de entrada do modelo, os sujeitos consideraram o processo abordagem simples e rápido. No geral, foi reportado que o custo-benefício da utilização da abordagem e do modelo propostos é positivo.
+A abordagem e o modelo propostos nesta pesquisa foram validados com sucesso por meio de um estudo de caso em que as unidades de análise foram três projetos de desenvolvimento de \textit{software}. De acordo com os sujeitos desse estudo de caso (i.e., \textit{Scrum Masters}), o modelo auxilia na detecção de oportunidades de melhoria do TE e, consequentemente, no processo de tomada de decisões. Além disso, apesar do esforço necessário para entender o modelo e o procedimento da abordagem, além do esforço para alimentar os nós de entrada do modelo, os sujeitos consideraram o processo para utilizar a abordagem simples e rápido. No geral, foi reportado que o custo-benefício da utilização da abordagem e do modelo propostos é positiva.
 
 \section{Relevância}
 \label{introducao:relevancia}
 
-A abordagem proposta é uma alternativa promissora para auxiliar no processo de tomada de decisões por parte dos gerentes de projeto. Os resultados calculados pelo modelo permitem que eles avaliem quais fatores merecem mais atenção caso mais de um fator esteja diminuindo a qualidade do TE, e quais atitudes podem ser tomadas para evitar riscos. Além disso, a utilização do modelo também permite identificar quais atitudes podem ser tomadas para melhorar o TE.
+A abordagem proposta é uma alternativa promissora para auxiliar no processo de tomada de decisões por parte dos gerentes de projeto. Os resultados calculados pelo modelo permitem que eles avaliem quais fatores devem ser tratados com mais atenção. Além disso, a utilização do modelo também permite identificar quais atitudes podem ser tomadas para melhorar o TE, e realizar predições acerca de possíveis cenários futuros.
 
 Como a utilização do modelo proposto proporciona os benefícios supracitados, e sabendo da relação entre o TE e a qualidade do produto de \textit{software} resultante dos processos de desenvolvimento, além do processo em si, a sua utilização proporciona o aumento das chances de sucesso do projeto. Além disso, o modelo proposto pode ser integrado em outras abordagens e modelos que utilizam \textit{Redes Bayesianas} para avaliação do processo de \textit{software} como um todo \cite{perkusich2014} \cite{perkusich2013}.
 
 \section{Estrutura da Dissertação}
 \label{introducao:estrutura}
 
-O conteúdo desta dissertação está dividido em outros seis capítulos:
+O conteúdo desta dissertação está dividido em outros seis capítulos da seguinte forma:
 
 \begin{itemize}
   \item no Capítulo \ref{fundamentacao}, são apresentados os conceitos e técnicas relacionados com este trabalho;
-  \item no Capítulo \ref{trabalhos}, são discutidos alguns trabalhos relacionados com esta pesquisa, suas limitações e contribuições, além do trabalho base;
+  \item no Capítulo \ref{trabalhos}, são discutidos alguns trabalhos relacionados à esta pesquisa, suas limitações e contribuições, além do trabalho base;
   \item no Capítulo \ref{modelo}, é apresentado o modelo proposto neste trabalho. Nesse capítulo são explicados o processo de construção desse modelo, seus fatores e relacionamentos, além do processo de definição das TPN;
-  \item no Capítulo \ref{descricao}, é explicada a abordagem proposta para utilizar o modelo
+  \item no Capítulo \ref{descricao}, é explicada a abordagem proposta para utilizar o modelo;
   \item o Capítulo \ref{estudodecaso} corresponde à validação da abordagem e do modelo propostos neste trabalho, que foi realizada em um estudo de caso;
   \item finalmente, o Capítulo \ref{conclusao} contém as considerações finais, limitações do trabalho e propostas de trabalhos futuros.
 \end{itemize}
