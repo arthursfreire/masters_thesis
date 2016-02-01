@@ -12,6 +12,7 @@ Apresentação do Modelo
     - Contexto do modelo
     - Citar trabalhos eficiência equipe
     - Atentar para os fatores descritos na Fundamentação Teórica
+    - Tabela nós
 
     - Adicionar uma tabela exemplo de calibração
 
@@ -19,12 +20,12 @@ Descrição da Abordagem
     - Explicar melhor etapa III
 
 Estudo de Caso
+    - Inserir Utilização da Abordagem
     - Ameaças à Validade
         * Citação vazia
 	- Ler tudo e ajustar
 
 Apêndice A
-    - Faltando as métricas
 
 Geral
     - Remover Itálico de RBs
