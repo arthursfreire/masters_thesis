@@ -3,12 +3,6 @@ Fundamentação Teórica
     - Desvantagem Perkusich
 
 Apresentação do Modelo
-    - Reescrever
-    - Contexto do modelo
-    - Citar trabalhos eficiência equipe
-    - Atentar para os fatores descritos na Fundamentação Teórica
-    - Tabela nós
-
     - Adicionar uma tabela exemplo de calibração
 
 Descrição da Abordagem

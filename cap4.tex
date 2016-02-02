@@ -1,88 +1,147 @@
 \chapter{Apresentação do Modelo}
 \label{modelo}
 
-Conforme explicado na Seção \ref{fundamentacao:redes:construcao}, a construção de uma \textit{Rede Bayesiana} pode ser dividada em duas fases: a construção do GAD, e a definição das funções de probabilidade. Portanto, neste capítulo, serão descritas essas duas fases do processo de construção do modelo proposto neste trabalho. À princípio, será explicado como foram identificados os relacionamentos entre os fatores-chave do modelo. Em seguida, será descrito o processo adotado para a definição das funções de probabilidade, e porque foi decidido utilizar funções de probabilidade em vez de tabelas de probabilidade.
+Conforme explicado na Seção \ref{fundamentacao:redes:construcao}, a construção de uma RB pode ser dividada em duas fases: a construção do GAD, e a definição das funções de probabilidade. Portanto, neste capítulo, serão descritas essas duas fases do processo de construção do modelo proposto neste trabalho. À princípio, será explicado como foram identificados os relacionamentos entre os fatores-chave do modelo. Em seguida, será descrito o processo adotado para a definição das funções de probabilidade, e porque foi decidido utilizar funções de probabilidade em vez de tabelas de probabilidade.
 
 \section{Construção do GAD}
 \label{modelo:gad}
 
-Nesta fase da construção do modelo é necessário identificar os fatores-chave que influenciam a qualidade do TE de equipes ágeis e os relacionamentos entre esses fatores. Como base para a construção do GAD, optou-se por utilizar o modelo proposto em \cite{freire} (Figura \ref{modelo:gad:freire}). De acordo com os autores, o modelo apresentado é uma boa representação do mundo real. Entretanto, uma de suas limitações é que ele foi construído com base em apenas um trabalho. Assim, a partir desse modelo e dos fatores descritos na Seção \ref{fundamentacao:ageis:fatores}, é possível refinar o GAD, e, assim, obter uma representação mais fiel ao mundo real.
+Nesta fase da construção do modelo, é necessário identificar os fatores-chave que influenciam a qualidade do TE de equipes ágeis e os relacionamentos entre esses fatores. Como base para a construção do GAD, optou-se por utilizar o modelo proposto em \cite{freire} (Figura \ref{trabalho:base:modelo}). De acordo com os autores, o modelo apresentado é uma boa representação do mundo real. Entretanto, uma de suas limitações é que ele foi construído com base em apenas um trabalho. Assim, a partir desse modelo e dos fatores descritos na Seção \ref{fundamentacao:ageis:fatores}, é possível refinar o GAD, e, assim, obter uma representação mais fiel ao mundo real.
+
+No modelo apresentado em \cite{freire}, o TE depende diretamente de três principais nós: \textit{Colaboração}, \textit{Esforço} da equipe de desenvolvimento e \textit{Atributos da Equipe}. Nesse trabalho, o fator \textit{Atributos da Equipe} depende diretamente dos \textit{Atributos Pessoais} e do \textit{Expertise} dos membros da equipe. Conforme descrito em \cite{freire}, o nó \textit{Atributos Pessoais} corresponde à diferença das personalidades dos membros da equipe, que contribui para que eles se dêem bem entre si. O nó \textit{Expertise}, por sua vez, corresponde as capacidades técnicas dos membros da equipe para realizar as atividades, com \textit{Redundância}. Assim, decidiu-se renomear o nó \textit{Atributos da Equipe} para \textit{Orientação da Equipe}, uma vez que os fatores que o influenciam afetam o respeito mútuo e a confiança existentes entre os membros da equipe. A Figura \ref{modelo:gad:orientacao} contém a representação gráfica desse nó.
 
 \begin{figure}[ht!]
 \begin{center}
-		\fbox{\includegraphics[scale=0.6]{figs/modeloSBES.pdf}}
+		\fbox{\includegraphics[scale=0.9]{figs/modeloOrientacao.pdf}}
 	\end{center}
-	\caption{Modelo Proposto por Freire et al.}
-	\label{modelo:gad:freire}
+	\caption{Representação do Nó \textit{Orientação da Equipe}.}
+	\label{modelo:gad:orientacao}
 \end{figure}
 
-No modelo apresentado em \cite{freire}, a qualidade do TE depende diretamente de três principais nós: \textit{Colaboração}, \textit{Esforço} da equipe de desenvolvimento e \textit{Atributos da Equipe}. Entretanto, como foi decidido considerar o TE no contexto das relações entre os membros da equipe para alcançar os objetivos propostos, o nó \textit{Esforço} não se enquadra no contexto deste trabalho. Como é esperado que as equipes ágeis sejam auto-organizáveis \cite{manifesto}, o nó \textit{Esforço} foi substituído por \textit{Auto-Gerenciamento}. Dessa forma, o fator principal, \textit{Trabalho em Equipe}, passa a depender diretamente dos nós: \textit{Colaboração}, \textit{Auto-Gerenciamento} e \textit{Atributos da Equipe} (Figura \ref{modelo:gad:altonivel}).
+O nó \textit{Reuniões}, que no modelo base depende diretamente dos nós \textit{Planejamento da Iteração}, \textit{Retrospectiva da Iteração} e \textit{Reuniões Diárias} foi substituído apenas pelo nó \textit{Reuniões Diárias}. Essa decisão foi tomada porque o que ocorre na \textit{Retrospectiva da Iteração}, levando em consideração a definição de \textit{Trabalho em Equipe} apresentada na Seção \ref{introducao:objetivos}, não tem influencia sobre a qualidade do TE. O \textit{Planejamento da Iteração}, por sua vez, está relacionado com a prevenção contra riscos e estimativa de tempo para cumprimento de atividades. Apesar desse fator influenciar a eficiência e o andamento da equipe, não há relação entre ele e o TE, de acordo com o que conceito definido na Seção \ref{introducao:objetivos}.
+
+Conforme descrito em \cite{freire}, o nó \textit{Reuniões Diárias} depende diretamente dos seguintes nós: \textit{Limite de 15 Minutos}, \textit{3 Perguntas} (i.e., "O que eu fiz hoje?", "O que farei amanhã?" e "Quais obstáculos estão impedindo o meu progresso?") e \textit{Presença de Todos os Membros}. Entretanto, conforme apresentado em \cite{moe2}, \cite{gurram} e \cite{haraldsen}, o \textit{Monitoramento} é necessário para que os membros da equipe mantenham-se sincronizados em relação às atividades realizadas e problemas encontrados, além de prover \textit{Feedback} em relação à realização dessas atividades. Logo, como o objetivo das perguntas é permitir aos participantes identificar potenciais barreiras e manter a coordenação da equipe, e isso está relacionando com o \textit{Monitoramento}, decidiu-se renomear o nó \textit{3 Perguntas} para \textit{Monitoramento}. Também foi decidido remover o nó \textit{Limite de 15 minutos} porque ele não é considerado um indicador de qualidade dessas reuniões. Assim, o nó \textit{Reuniões Diárias} passou a depender apenas dos nós \textit{Monitoramento} e \textit{Presença de Todos os Membros} (Figura \ref{modelo:gad:reunioes}).
 
 \begin{figure}[ht!]
 \begin{center}
-		\fbox{\includegraphics[scale=0.9]{figs/modeloAltoNivel.pdf}}
+		\fbox{\includegraphics[scale=0.9]{figs/modeloReunioes.pdf}}
 	\end{center}
-	\caption{Representação do modelo proposto em alto nível.}
-	\label{modelo:gad:altonivel}
+	\caption{Representação do Nó \textit{Reuniões Diárias}.}
+	\label{modelo:gad:reunioes}
 \end{figure}
 
-No modelo tomado como base, o nó \textit{Colaboração} depende diretamente dos nós \textit{Comunicação} e \textit{Reuniões}. \textit{Comunicação}, por sua vez, depende diretamente dos seguintes nós: \textit{Frequência}, \textit{Informalidade}, \textit{Estrutura} - possibilidade dos membros da equipe se comunicarem diretamente uns com os outros - e \textit{Abertura}, que está relacionada com o ato de não haver contenção de informação entre os membros da equipe. Como forma de minimizar a complexidade dos cálculos efetuados \cite{} e o viés que pode ser introduzido em virtude da subjetidade que esse nós representam, optou-se por substituir esses quatro nós por \textit{Distribuição da Equipe} e \textit{Cara-a-Cara}. Esse nós estão relacionados, respectivamente, com o fato dos membros da equipe compartilharem a mesma localidade e conversarem cara-a-cara diariamente. Dessa forma, a \textit{Distribuição da Equipe} substitui a \textit{Frequência}, uma vez que o fato de os membros da equipe compartilharem o mesmo local facilita a comunicação \cite{lalsing} e, assim, contribui para que a comunicação ocorra em maior frequência. Já o nó \textit{Cara-a-Cara} substitui a \textit{Informalidade}, \textit{Estrutura} e \textit{Abertura}, tendo em vista que essa prática contribui para que essas características se façam na presentes na \textit{Comunicação}.
-
-O nó \textit{Reuniões}, que no modelo base depende diretamente dos nós \textit{Planejamento da Iteração}, \textit{Retrospectiva da Iteração} e \textit{Reuniões Diárias} foi substituído apenas pelo nó \textit{Reuniões Diárias}. Essa decisão foi tomada porque o que ocorre na \textit{Retrospectiva da Iteração} não influenciará mais o TE na iteração que se passou. O \textit{Planejamento da Iteração}, por sua vez, está relacionado com a utilização de técnicas de Engenharia de \textit{Software} que facilitam na prevenção contra riscos e estimativa de tempo para cumprimento de atividades. Além disso, não é objetivo do \textit{Planejamento da Iteração} melhorar a \textit{Comunicação} e a \textit{Colaboração} das equipes.
-
-Conforme descrito em \cite{freire}, o nó \textit{Reuniões Diárias} depende diretamente dos seguintes nós: \textit{Limite de 15 Minutos}, \textit{3 Perguntas} (i.e., "O que eu fiz hoje?", "O que farei amanhã?" e "Quais obstáculos estão impedindo o meu progresso?") e \textit{Presença de Todos os Membros}. Entretanto, de acordo com Moe et al. \cite{moe2}, é necessário aplicar o \textit{Monitoramento} para que os membros da equipe observem as atividades e a eficiência dos outros integrantes, além de reconhecerem quando um membro da equipe atua corretamente, provendo \textit{feedback} e apoio. Logo, como o objetivo das perguntas é permitir aos participantes identificar potenciais barreiras e manter a coordenação da equipe, e isso está relacionando com o \textit{Monitoramento}, decidiu-se renomear o nó \textit{3 Perguntas} para \textit{Monitoramento}. Além disso, as três perguntas as quais o nó está relacionado são referentes ao contexto de \textit{Scrum}, e o modelo proposto neste trabalho é para avaliação do TE de equipes ágeis em geral. Também foi decidido remover o nó \textit{Limite de 15 minutos} porque ele não é considerado um indicador de qualidade dessas reuniões.
-
-Em \cite{moe}, são descritos cinco fatores que precisam ser levados em conta para melhorar o TE de equipes ágeis. São eles: \textit{Liderança Compartilhada}, \textit{Orientação da Equipe}, \textit{Redundância}, \textit{Aprendizagem da Equipe} e \textit{Autonomia da Equipe}. A seguir, há a definição de cada um desses fatores com base nesse trabalho anteriormente citado:
-
-\begin{itemize}
-  \item \textit{Liderança Compartilhada}: Todos os membros da equipe compartilham a autoridade das decisões em vez centralizá-la. Dessa forma, evita que apenas uma pessoa tome as decisões, ou todos os membros da equipe tomem decisões levando em consideração apenas o seu trabalho individual, independente dos outros membros da equipe. Geralmente, o indivíduo que possui o conhecimento necessário durante uma determinada fase do projeto assume a liderança, compartilhando os seus conhecimentos, e permitindo que todos participem do processo de tomada de decisões;
-  \item \textit{Orientação da Equipe}: Priorização dos objetivos da equipe em vez dos objetivos indivíduais, respeitando o compartamento de cada um dos membros da equipe;
-  \item \textit{Redundância}: Os membros da equipe podem substituir uns aos outros sem treinamento extenso;
-  \item \textit{Aprendizagem da Equipe}: Melhoria contínua dos métodos de trabalho com base nos \textit{feedbacks} fornecidos à equipe;
-  \item \textit{Autonomia da Equipe}: As decisões tomadas pela equipe são respeitadas pelos gerentes que estão fora dela.
-\end{itemize}
-
-Ainda sobre as \textit{Reuniões Diárias}, durante elas, os membros da equipe tem a possibilidade de regular seus limites e condições, escolhendo em quais atividades desejam trabalhar, além de negociar e discutir sobre prevenção contra riscos e medidas corretivas. Como isso está relacionado à \textit{Autonomia da Equipe}, também foi decidido adicioná-lo como nó que influencia as \textit{Reuniões Diárias}. Dessa forma, tem-se que as \textit{Reuniões Diárias} tornam-se diretamente dependentes de \textit{Monitoramento}, \textit{Presença de Todos os Membros} e \textit{Autonomia da Equipe}.
-
-Além disso, conforme supracitado, pode-se concluir que a \textit{Orientação da Equipe} contribui diretamente para a \textit{Colaboração} da equipe, pois há uma preocupação em priorizar os objetivos da equipe em vez dos objetivos individuais. Dessa forma, é necessário que os membros da equipes trabalhem de forma coesa, colaborando para que os objetivos da equipe sejam sempre alcançados. Por isso, decidiu-se adicionar o nó \textit{Orientação da Equipe} como influenciate do nó \textit{Colaboração}. Com isso, conforme representado na Figura \ref{modelo:gad:colaboracao}, o nó \textit{Colaboração} passa a depender diretamente dos nós \textit{Comunicação}, \textit{Orientação da Equipe} e \textit{Reuniões Diárias}.
+Em \cite{freire}, o nó \textit{Comunicação} depende diretamente dos seguintes nós: \textit{Frequência}, \textit{Informalidade}, \textit{Estrutura} - possibilidade dos membros da equipe se comunicarem diretamente uns com os outros - e \textit{Abertura}, que está relacionada com o ato de não haver contenção de informação entre os membros da equipe. Como forma de minimizar a complexidade dos cálculos efetuados \cite{bengal} e o viés que pode ser introduzido em virtude da subjetidade que esse nós representam, optou-se por substituir esses quatro nós por \textit{Distribuição da Equipe} e \textit{Meio de Comunicação} (Figura \ref{modelo:gad:comunicacao}), que corresponde à maneira com a qual a equipe se comunica. Esses nós estão relacionados, respectivamente, com o fato dos membros da equipe compartilharem o mesmo local de trabalho e conversarem cara-a-cara sempre que possível. Dessa forma, a \textit{Distribuição da Equipe} substitui a \textit{Frequência}, uma vez que o fato de os membros da equipe compartilharem o mesmo local facilita a comunicação \cite{lalsing} e, assim, contribui para que a comunicação ocorra em maior frequência. Já o nó \textit{Meio de Comunicação} substitui a \textit{Informalidade}, \textit{Estrutura} e \textit{Abertura}, tendo em vista que a conversa cara-a-cara contribui para que essas características se façam na presentes na \textit{Comunicação}.
 
 \begin{figure}[ht!]
 \begin{center}
-		\fbox{\includegraphics[scale=0.68]{figs/modeloColaboracao.pdf}}
+		\fbox{\includegraphics[scale=0.9]{figs/modeloComunicacao.pdf}}
 	\end{center}
-	\caption{Colaboração e os fatores que a influenciam.}
-	\label{modelo:gad:colaboracao}
+	\caption{Representação do Nó \textit{Comunicação}.}
+	\label{modelo:gad:comunicacao}
 \end{figure}
 
-\textit{Auto-Gerenciamento} é um dos novos nós que foi adicionado ao modelo, e influencia diretamente o TE. Na literatura, é estabelecido que a autoridade da decisão e da liderança de equipes auto-organizáveis precisa ser compartilhada \cite{morgan} \cite{kirkman}. Além disso, ainda em \cite{morgan}, é dito que equipes auto-organizáveis requerem uma capacidade de aprendizagem das equipes para que elas possam adaptar-se às transformações que ocorrem no ambiente. Ainda de acordo com \cite{morgan}, toda equipe que possui a capacidade de se auto-gerenciar precisa de um certo grau de \textit{Redundância}. Logo, com base nessas afirmações, os nós \textit{Liderança Compartilhada}, \textit{Aprendizagem da Equipe} e \textit{Redundância} foram adicionados como pais do nó \textit{Auto-Gerenciamento}. Na Figura \ref{modelo:gad:autogerenciamento} está representado o nó \textit{Auto-Gerenciamento} em conjunto com seus nós pai.
+Na literatura, é estabelecido que a autoridade da decisão e da liderança de equipes auto-gerenciáveis precisa ser compartilhada \cite{morgan} \cite{kirkman}. Além disso, em \cite{morgan}, é dito que equipes auto-gerenciáveis requerem uma capacidade de aprendizagem das equipes para que elas possam adaptar-se às transformações que ocorrem no contexto em que o trabalho é desenvolvido. Ainda com base em \cite{morgan}, toda equipe que possui a capacidade de se auto-gerenciar precisa de um certo grau de \textit{Redundância}. Logo, com base nessas afirmações, e no fato do nó \textit{Expertise} englobar esse conceito, os nós \textit{Liderança Compartilhada}, \textit{Aprendizagem da Equipe} e \textit{Redundância} foram adicionados como pais do nó \textit{Auto-Gerenciamento}. Na Figura \ref{modelo:gad:autogerenciamento}, está representado o nó \textit{Auto-Gerenciamento}.
 
 \begin{figure}[ht!]
 \begin{center}
 		\fbox{\includegraphics[scale=0.9]{figs/modeloAutoGerenciamento.pdf}}
 	\end{center}
-	\caption{Auto-Gerenciamento e os fatores que o influenciam.}
+	\caption{Representação do Nó \textit{Auto-Gerenciamento}.}
 	\label{modelo:gad:autogerenciamento}
 \end{figure}
 
-O nó \textit{Atributos da Equipe} foi mantido como proposto no modelo em \cite{freire}. A Figura \ref{modelo:gad:atributos} contém a representação gráfica desse nó em particular.
+De acordo com a Tabela \ref{fundamentacao:ageis:fatores:tabela}, a \textit{Coordenação} de uma equipe ágil refere-se à execucação das atividades por parte dos integrantes da equipe de maneira sincronizada e integrada. Logo, com base no que foi dito anteriormente, a qualidade da \textit{Comunicação} e a eficiência das \textit{Reuniões Diárias} para sincronizar os membros da equipe com relação às atividade e problemas, contribuem para a \textit{Coordenação} da equipe.
+
+Conforme descrito na Tabela \ref{fundamentacao:ageis:fatores:tabela}, o conceito de \textit{Colaboração} é referente ao compromisso que os integrantes tem com a equipe para alcançar os objetivos em comum. O modelo proposto em \cite{freire} considera a \textit{Comunicação} e as \textit{Reuniões} como fatores que influenciam esse nó. Contudo, neste trabalho, optou-se por considerar como pais do nó \textit{Colaboração} os seguintes nós: \textit{Coordenação} e \textit{Orientação da Equipe}. Isso porque acredita-se que eficiência da \textit{Coordenação}, e a confiança e espírito de grupo referentes aos nó \textit{Orientação da Equipe} contribuem para a \textit{Colaboração} da equipe.
+
+O conceito de \textit{Coesão}, conforme descrito na Tabela \ref{fundamentacao:ageis:fatores:tabela}, corresponde à atração interpessoal dos membros da equipe, seu compromisso com as tarefas e espírito de grupo. Entretanto, acredita-se que, no contexto de metodologias ágeis, uma equipe coesa além de possuir essas características, que correspondem à \textit{Colaboração}. Além disso, aidan no contexto de equipes ágeis, entende-se que equipes coesas devem possuir alta capacidade de \textit{Auto-Gerenciamento}. Portanto, os nós \textit{Colaboração} e \textit{Auto-Gerenciamento} passaram a ser nós pai de \textit{Coesão}. A Figura \ref{modelo:gad:coesao} contém a representação do nó \textit{Coesão}.
 
 \begin{figure}[ht!]
 \begin{center}
-		\fbox{\includegraphics[scale=0.9]{figs/modeloAtributos.pdf}}
+		\fbox{\includegraphics[scale=0.7]{figs/modeloCoesao.pdf}}
 	\end{center}
-	\caption{Atributos da Equipe e os fatores que o influenciam.}
-	\label{modelo:gad:atributos}
+	\caption{Representação do Nó \textit{Coesão}.}
+	\label{modelo:gad:coesao}
 \end{figure}
 
-Finalmente, após definir os nós do GAD e os relacionamentos entre eles, na Figura \ref{modelo:gad:final} é possível verificar o GAD completo.
+Na Seção \ref{introducao:objetivos}, foi definido que a interferência de um agente externo (e.g., cliente) nas atividades realizadas influencia a qualidade do TE. Essa definição é similar ao conceito do fator \textit{Autonomia da Equipe}, que refere-se à influência de agentes externos a equipe na realização das atividades dela. Portanto, foi decidido adicionar o nó \textit{Autonomia da Equipe} ao GAD. Dessa forma, considerando o conceito de \textit{Trabalho em Equipe} adotado neste trabalho, o GAD para o modelo proposto ficou definido conforme a Figura \ref{modelo:gad:final}.
 
 \begin{figure}[ht!]
 \begin{center}
 		\fbox{\includegraphics[scale=0.57]{figs/modeloFinal.pdf}}
 	\end{center}
-	\caption{Estrutura final do modelo proposto.}
+	\caption{Representação do Modelo Proposto.}
 	\label{modelo:gad:final}
 \end{figure}
+
+Grande parte dos nós do GAD apresentados nesta seção subjetivos. Assim, como forma de minizar o viés que pode ser introduzido nos resultados calculados pelo modelo, foi decidido representar esses nós como NR, onde cada um deles possui cinco estados (i.e., Muito Baixo, Baixo, Médio, Alto e Muito Alto), onde cada estado representa um possível grau de qualidade para o nó. Portanto, os resultados calculados para cada nó, correspondem à qualidade daquele fator no cenário em que foi avaliado. Como não há evidências referentes aos nós de entrada e, de certa forma, eles também são subjetivos, também optou-se por representá-los como NR. A Tabela \ref{modelo:gad:tabela} contém as informações referentes aos significados dos estados de cada nó do modelo.
+
+\begin{center}
+\begin{longtable}{
+|p{0.30\dimexpr \textwidth-3\arrayrulewidth-3\tabcolsep\relax}|
+ p{0.08\dimexpr \textwidth-3\arrayrulewidth-3\tabcolsep\relax}|
+ p{0.62\dimexpr \textwidth-3\arrayrulewidth-3\tabcolsep\relax}|
+}
+\caption{Definição dos Estados dos Nós do Modelo. \label{modelo:gad:tabela}} \\
+
+\hline
+\multicolumn{1}{|c|}{\textbf{Nó}} & \multicolumn{2}{|c|}{\textbf{Estado}} \\
+\hline
+\endfirsthead
+
+\hline
+\multicolumn{3}{|c|}{Continuação da Tabela \ref{satisfacao:tabela}}\\
+\hline
+\multicolumn{1}{|c|}{\textbf{Nó}} & \multicolumn{2}{|c|}{\textbf{Estado}} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+% \multicolumn{2}{| c |}{End of Table}\\
+% \hline\hline
+% \endlastfoot
+
+\multirow{2}{*}{Trabalho em Equipe}           & Muito Alto  & Levando em consideração o conceito de TE neste trabalho, a sua qualidade é muito alta.                                                                                                \\ \cline{2-3}
+                                              & Muito Baixo & Levando em consideração o conceito de TE neste trabalho, a sua qualidade é muito baixa.                                                                                               \\ \hline
+\multirow{2}{*}{Autonomia da Equipe}          & Muito Alto  & Não há um agente externo interferindo em como a equipe executa suas tarefas. O agente externo colabora com a equipe para definir o que será executado e apenas quando adequado.       \\ \cline{2-3}
+                                              & Muito Baixo & Há um agente externo que sempre interfere em como a equipe deve executar suas atividades.                                                                                             \\ \hline
+\multirow{2}{*}{Coesão}                       & Muito Alto  & A equipe trabalha de forma coesa e síncrona, mantendo os objetivos da equipe como prioridade, com eficiência no auto-gerenciamento.                                                   \\ \cline{2-3}
+                                              & Muito Baixo & A equipe não trabalha de forma coesa e síncrona, mantendo os objetivos da equipe como prioridade, sem eficiência no auto-gerenciamento.                                               \\ \hline
+\multirow{2}{*}{Colaboração}                  & Muito Alto  & Há colaboração entre os membros da equipe para garantir o desenvolvimento do projeto.                                                                                                 \\ \cline{2-3}
+                                              & Muito Baixo & Não há colaboração entre os membros da equipe para garantir o desenvolvimento do projeto.                                                                                             \\ \hline
+\multirow{2}{*}{Auto-Gerenciamento}           & Muito Alto  & A equipe é capaz dese auto-organiza com eficácia para encarar desafios e mudanças complexas.                                                                                          \\ \cline{2-3}
+                                              & Muito Baixo & A equipe não é capaz de se auto-organiza com eficácia para encarar desafios e mudanças complexas.                                                                                     \\ \hline
+\multirow{2}{*}{Coordenação}                  & Muito Alto  & A execução das atividades por parte dos integrantes ocorre de maneira síncrona e integrada.                                                                                           \\ \cline{2-3}
+                                              & Muito Baixo & A execução das atividades por parte dos integrantes não ocorre de maneira síncrona e integrada.                                                                                       \\ \hline
+\multirow{2}{*}{Orientação da Equipe}         & Muito Alto  & Membros confiam na equipe e se sentem motivados a trabalharem juntos para alcançar os objetivos da equipe.                                                                            \\ \cline{2-3}
+                                              & Muito Baixo & Membros não confiam na equipe e se sentem motivados a trabalharem juntos para alcançar os objetivos da equipe.                                                                        \\ \hline
+\multirow{2}{*}{Comunicação}                  & Muito Alto  & A comunicação entre os membros da equipe é efetiva.                                                                                                                                   \\ \cline{2-3}
+                                              & Muito Baixo & A comunicação entre os membros da equipe não é efetiva.                                                                                                                               \\ \hline
+\multirow{2}{*}{Reuniões Diárias}             & Muito Alto  & Foi possível remover os obstáculos e sincronizar toda a equipe.                                                                                                                       \\ \cline{2-3}
+                                              & Muito Baixo & Não foi possível remover os obstáculos e sincronizar toda a equipe.                                                                                                                   \\ \hline
+\multirow{2}{*}{Distribuição da Equipe}       & Muito Alto  & Todos os membros da equipe compartilham o mesmo local de trabalho.                                                                                                                    \\ \cline{2-3}
+                                              & Muito Baixo & Os membros da equipe compartilham o mesmo local de trabalho.                                                                                                                          \\ \hline
+\multirow{2}{*}{Meio de Comunicação}          & Muito Alto  & Os membros da equipe comunicam-se cara-a-cara sempre que possível.                                                                                                                    \\ \cline{2-3}
+                                              & Muito Baixo & Os membros da equipe não se comunicam cara-a-cara sempre que possível.                                                                                                                \\ \hline
+\multirow{2}{*}{Monitoramento}                & Muito Alto  & Os membros da equipe externam suas dificuldades e seu progresso em relação às atividades realizadas de forma clara e objetiva.                                                        \\ \cline{2-3}
+                                              & Muito Baixo & Os membros da equipe não relatam de forma clara as atividades nas quais estão envolvidos, ou aproveitam a oportunidade para justificar decisões que foram tomadas.                    \\ \hline
+\multirow{2}{*}{Presença de Todos os Membros} & Muito Alto  & Todos os membros da equipe estiveram presente durante as reuniões diárias.                                                                                                            \\ \cline{2-3}
+                                              & Muito Baixo & Em nenhuma das reuniões diárias todos os membros estavam presentes.                                                                                                                   \\ \hline
+\multirow{2}{*}{Atributos Pessoais}           & Muito Alto  & A mistura de personalidades dos membros da equipe contribui para que eles se dêem bem entre si.                                                                                       \\ \cline{2-3}
+                                              & Muito Baixo & A mistura de personalidades dos membros da equipe não contribui para que eles se dêem bem entre si.                                                                                   \\ \hline
+\multirow{2}{*}{Expertise}                    & Muito Alto  & Os membros da equipe possuem todo o conhecimento necessário para o desenvolvimento das atividades com interseção (capacidade de substituir uns aos outros na realização das tarefas). \\ \cline{2-3}
+                                              & Muito Baixo & Os membros da equipe NÃO possuem todo o conhecimento necessário para o desenvolvimento das atividades.                                                                                \\ \hline
+\multirow{2}{*}{Liderança Compartilhada}      & Muito Alto  & A autoridade na tomada de decisões e na liderança é compartilhada entre os membros da equipe.                                                                                         \\ \cline{2-3}
+                                              & Muito Baixo & A autoridade na tomada de decisões e na liderança não é compartilhada entre os membros da equipe.                                                                                     \\ \hline
+\multirow{2}{*}{Aprendizagem da Equipe}       & Muito Alto  & A equipe se adapta facilmente às mudanças que ocorrem durante o projeto.                                                                                                              \\ \cline{2-3}
+                                              & Muito Baixo & A equipe não tem capacidade de se adaptar às mudanças que ocorrem durante o projeto.                                                                                                  \\ \hline
+
+
+\end{longtable}
+\end{center} 
 
 \section{Funções de Probabilidade}
 \label{modelo:funcoes}
